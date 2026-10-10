@@ -1,0 +1,335 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Finance Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet">
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.left-6{left:1.5rem}.top-6{top:1.5rem}.z-0{z-index:0}.z-10{z-index:10}.z-20{z-index:20}.col-span-1{grid-column:span 1 / span 1}.mx-auto{margin-left:auto;margin-right:auto}.mb-12{margin-bottom:3rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-2{margin-top:0.5rem}.mt-auto{margin-top:auto}.mb-3{margin-bottom:0.75rem}.flex{display:flex}.grid{display:grid}.h-1{height:0.25rem}.h-1\.5{height:0.375rem}.h-16{height:4rem}.h-full{height:100%}.min-h-\[400px\]{min-height:400px}.min-h-screen{min-height:100vh}.w-1{width:0.25rem}.w-1\.5{width:0.375rem}.w-full{width:100%}.max-w-7xl{max-width:80rem}.max-w-sm{max-width:24rem}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-\[2px\]{gap:2px}.overflow-hidden{overflow:hidden}.overflow-visible{overflow:visible}.overflow-x-hidden{overflow-x:hidden}.rounded-2xl{border-radius:1rem}.rounded-\[15px\]{border-radius:15px}.rounded-full{border-radius:9999px}.rounded-sm{border-radius:0.125rem}.border{border-width:1px}.border-white\/10{border-color:rgb(255 255 255 / 0.1)}.bg-black\/50{background-color:rgb(0 0 0 / 0.5)}.bg-lime-500{--tw-bg-opacity:1;background-color:rgb(132 204 22 / var(--tw-bg-opacity, 1))}.bg-zinc-950{--tw-bg-opacity:1;background-color:rgb(9 9 11 / var(--tw-bg-opacity, 1))}.bg-zinc-950\/90{background-color:rgb(9 9 11 / 0.9)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-t{background-image:linear-gradient(to top, var(--tw-gradient-stops))}.from-lime-500\/5{--tw-gradient-from:rgb(132 204 22 / 0.05) var(--tw-gradient-from-position);--tw-gradient-to:rgb(132 204 22 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-white\/10{--tw-gradient-from:rgb(255 255 255 / 0.1) var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-zinc-950{--tw-gradient-from:#09090b var(--tw-gradient-from-position);--tw-gradient-to:rgb(9 9 11 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), transparent var(--tw-gradient-via-position), var(--tw-gradient-to)}.via-white\/5{--tw-gradient-to:rgb(255 255 255 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), rgb(255 255 255 / 0.05) var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.p-\[1px\]{padding:1px}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.pr-2{padding-right:0.5rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.font-medium{font-weight:500}.uppercase{text-transform:uppercase}.leading-none{line-height:1}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-0.025em}.tracking-widest{letter-spacing:0.1em}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-zinc-100{--tw-text-opacity:1;color:rgb(244 244 245 / var(--tw-text-opacity, 1))}.text-zinc-300{--tw-text-opacity:1;color:rgb(212 212 216 / var(--tw-text-opacity, 1))}.text-zinc-400{--tw-text-opacity:1;color:rgb(161 161 170 / var(--tw-text-opacity, 1))}.text-zinc-500{--tw-text-opacity:1;color:rgb(113 113 122 / var(--tw-text-opacity, 1))}.text-zinc-600{--tw-text-opacity:1;color:rgb(82 82 91 / var(--tw-text-opacity, 1))}.text-lime-500{--tw-text-opacity:1;color:rgb(132 204 22 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-0{opacity:0}.opacity-70{opacity:0.7}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-xl{--tw-backdrop-blur:blur(24px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}.duration-700{transition-duration:700ms}.hover\:from-lime-500\/40:hover{--tw-gradient-from:rgb(132 204 22 / 0.4) var(--tw-gradient-from-position);--tw-gradient-to:rgb(132 204 22 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.hover\:to-transparent:hover{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.group:hover .group-hover\:-translate-y-1{--tw-translate-y:-0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:translate-x-1{--tw-translate-x:0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:text-lime-400{--tw-text-opacity:1;color:rgb(163 230 53 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width: 768px){.md\:col-span-2{grid-column:span 2 / span 2}.md\:row-span-2{grid-row:span 2 / span 2}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:gap-6{gap:1.5rem}.md\:p-12{padding:3rem}.md\:p-8{padding:2rem}.md\:text-5xl{font-size:3rem;line-height:1}}</style></head>
+<body class="bg-zinc-950 text-zinc-100 antialiased min-h-screen flex items-center justify-center p-4 md:p-8 overflow-x-hidden" style="font-family: 'Inter', sans-serif;">
+
+    <!-- Main Grid Container -->
+    <div class="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 relative">
+
+        <!-- ROW 1 -->
+
+        <!-- Main Title Area -->
+        <div class="group relative rounded-2xl bg-gradient-to-br from-white/10 via-white/5 to-transparent p-[1px] transition-colors duration-700 hover:from-lime-500/40 hover:to-transparent col-span-1 md:col-span-2">
+            <div class="h-full w-full rounded-[15px] bg-zinc-950/90 backdrop-blur-xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-lime-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+                <div class="flex items-center gap-2 mb-12 relative z-10">
+                    <div class="flex gap-[2px]">
+                        <span class="w-1 h-1 bg-lime-500 rounded-sm"></span>
+                        <span class="w-1 h-1 bg-lime-500 rounded-sm"></span>
+                        <span class="w-1 h-1 bg-lime-500 rounded-sm"></span>
+                    </div>
+                    <span class="text-xs text-zinc-400 tracking-widest uppercase" style="font-family: 'JetBrains Mono', monospace;">System Status: Optimal</span>
+                </div>
+
+                <div class="relative z-10">
+                    <h2 class="text-4xl md:text-5xl font-medium tracking-tight text-white uppercase leading-none mb-6">
+                        TREASURY <br> PLATFORM.
+                    </h2>
+                    <p class="text-xs text-zinc-500 uppercase tracking-widest leading-relaxed max-w-sm" style="font-family: 'JetBrains Mono', monospace;">
+                        Institutional-grade liquidity infrastructure designed for global scale and programmatic routing.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Metric 1: Interest Rate -->
+        <div class="group relative rounded-2xl bg-gradient-to-br from-white/10 via-white/5 to-transparent p-[1px] transition-colors duration-700 hover:from-lime-500/40 hover:to-transparent col-span-1">
+            <div class="h-full w-full rounded-[15px] bg-zinc-950/90 backdrop-blur-xl p-6 flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-lime-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+                <div class="relative z-10 mb-8">
+                    <span class="text-xs text-zinc-400 uppercase tracking-widest" style="font-family: 'JetBrains Mono', monospace;">Starting Base Yield</span>
+                    <div class="text-3xl font-medium tracking-tight text-white mt-2 group-hover:text-lime-400 transition-colors duration-300">1.25%</div>
+                </div>
+
+                <!-- SVG Animated Line Chart -->
+                <div class="relative z-10 w-full h-16 mt-auto">
+                    <svg viewBox="0 0 100 40" fill="none" class="w-full h-full overflow-visible" preserveAspectRatio="none">
+                        <path d="M0,35 Q15,35 25,25 T50,20 T75,10 T100,5" stroke="#84cc16" stroke-width="2" stroke-dasharray="150" stroke-dashoffset="150" stroke-linecap="round" stroke-linejoin="round">
+                            <animate attributeName="stroke-dashoffset" values="150;0" dur="2.5s" fill="freeze" calcMode="spline" keySplines="0.4 0 0.2 1" keyTimes="0;1"></animate>
+                        </path>
+                        <path d="M0,35 Q15,35 25,25 T50,20 T75,10 T100,5 L100,40 L0,40 Z" fill="url(#limeGrad)" opacity="0">
+                            <animate attributeName="opacity" values="0;0.3" dur="2.5s" fill="freeze" begin="0.2s"></animate>
+                        </path>
+                        <defs>
+                            <linearGradient id="limeGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#84cc16"></stop>
+                                <stop offset="100%" stop-color="#84cc16" stop-opacity="0"></stop>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Metric 2: Term Length & WebGL Dots -->
+        <div class="group relative rounded-2xl bg-gradient-to-br from-white/10 via-white/5 to-transparent p-[1px] transition-colors duration-700 hover:from-lime-500/40 hover:to-transparent col-span-1">
+            <div class="h-full w-full rounded-[15px] bg-zinc-950/90 backdrop-blur-xl p-6 flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-lime-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+                <div class="relative z-10 mb-8">
+                    <span class="text-xs text-zinc-400 uppercase tracking-widest" style="font-family: 'JetBrains Mono', monospace;">Typical Term Length</span>
+                    <div class="text-xl font-medium tracking-tight text-white mt-2 group-hover:text-lime-400 transition-colors duration-300">30 DAYS — 60 MOS</div>
+                </div>
+
+                <!-- Term WebGL Dots Container -->
+                <div id="webgl-term-mount" class="relative z-0 w-full h-16 mt-auto opacity-70 group-hover:opacity-100 transition-opacity duration-500"><canvas width="252" height="64" style="display: block; width: 252px; height: 64px;"></canvas></div>
+            </div>
+        </div>
+
+        <!-- ROW 2 & 3 -->
+
+        <!-- Main WebGL Area -->
+        <div class="group relative rounded-2xl bg-gradient-to-br from-white/10 via-white/5 to-transparent p-[1px] transition-colors duration-700 hover:from-lime-500/40 hover:to-transparent col-span-1 md:col-span-2 md:row-span-2 min-h-[400px]">
+            <div class="h-full w-full rounded-[15px] bg-zinc-950/90 backdrop-blur-xl p-2 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-lime-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10"></div>
+
+                <!-- Container for ThreeJS -->
+                <div id="webgl-main-mount" class="w-full h-full absolute inset-0 z-0"><canvas width="626" height="479" style="display: block; width: 626px; height: 479px;"></canvas></div>
+
+                <!-- Overlay gradient for depth -->
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent z-10 pointer-events-none"></div>
+
+                <!-- Overlay Interface -->
+                <div class="absolute top-6 left-6 z-20 pointer-events-none">
+                    <div class="flex gap-1 items-center bg-black/50 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/10">
+                        <span class="w-1.5 h-1.5 rounded-full bg-lime-500" style="animation: pulse 2s infinite;">
+                            <animate attributename="opacity" values="0.2;1;0.2" dur="2s" repeatcount="indefinite">
+                        </animate></span>
+                        <span class="text-xs text-zinc-300" style="font-family: 'JetBrains Mono', monospace;">Network Live</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advantage Card 01 -->
+        <div class="group relative rounded-2xl bg-gradient-to-br from-white/10 via-white/5 to-transparent p-[1px] transition-colors duration-700 hover:from-lime-500/40 hover:to-transparent flex flex-col justify-between">
+            <div class="h-full w-full rounded-[15px] bg-zinc-950/90 backdrop-blur-xl p-8 flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-lime-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+                <div class="flex justify-between items-center mb-12 relative z-10">
+                    <span class="text-xs text-zinc-500" style="font-family: 'JetBrains Mono', monospace;">01/</span>
+                    <iconify-icon icon="solar:global-linear" class="text-lg text-zinc-600 group-hover:text-lime-400 transition-colors duration-300"></iconify-icon>
+                </div>
+
+                <div class="relative z-10 mt-auto">
+                    <h3 class="text-lg font-medium tracking-tight text-white flex items-center gap-2 mb-3">
+                        Global Payouts
+                        <iconify-icon icon="solar:arrow-right-up-linear" class="text-lime-500 opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 group-hover:-translate-y-1 duration-300"></iconify-icon>
+                    </h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed pr-2">
+                        Execute cross-border transactions seamlessly across emerging markets with precision routing.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advantage Card 02 -->
+        <div class="group relative rounded-2xl bg-gradient-to-br from-white/10 via-white/5 to-transparent p-[1px] transition-colors duration-700 hover:from-lime-500/40 hover:to-transparent flex flex-col justify-between">
+            <div class="h-full w-full rounded-[15px] bg-zinc-950/90 backdrop-blur-xl p-8 flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-lime-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+                <div class="flex justify-between items-center mb-12 relative z-10">
+                    <span class="text-xs text-zinc-500" style="font-family: 'JetBrains Mono', monospace;">02/</span>
+                    <iconify-icon icon="solar:chart-square-linear" class="text-lg text-zinc-600 group-hover:text-lime-400 transition-colors duration-300"></iconify-icon>
+                </div>
+
+                <div class="relative z-10 mt-auto">
+                    <h3 class="text-lg font-medium tracking-tight text-white flex items-center gap-2 mb-3">
+                        Live Analytics
+                        <iconify-icon icon="solar:arrow-right-up-linear" class="text-lime-500 opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 group-hover:-translate-y-1 duration-300"></iconify-icon>
+                    </h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed pr-2">
+                        Monitor capital flow and operational telemetry with absolute millisecond precision.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advantage Card 03 -->
+        <div class="group relative rounded-2xl bg-gradient-to-br from-white/10 via-white/5 to-transparent p-[1px] transition-colors duration-700 hover:from-lime-500/40 hover:to-transparent flex flex-col justify-between">
+            <div class="h-full w-full rounded-[15px] bg-zinc-950/90 backdrop-blur-xl p-8 flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-lime-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+                <div class="flex justify-between items-center mb-12 relative z-10">
+                    <span class="text-xs text-zinc-500" style="font-family: 'JetBrains Mono', monospace;">03/</span>
+                    <iconify-icon icon="solar:bolt-linear" class="text-lg text-zinc-600 group-hover:text-lime-400 transition-colors duration-300"></iconify-icon>
+                </div>
+
+                <div class="relative z-10 mt-auto">
+                    <h3 class="text-lg font-medium tracking-tight text-white flex items-center gap-2 mb-3">
+                        Yield Optimization
+                        <iconify-icon icon="solar:arrow-right-up-linear" class="text-lime-500 opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 group-hover:-translate-y-1 duration-300"></iconify-icon>
+                    </h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed pr-2">
+                        Deploy idle capital instantly through algorithmically managed distributed liquidity pools.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advantage Card 04 -->
+        <div class="group relative rounded-2xl bg-gradient-to-br from-white/10 via-white/5 to-transparent p-[1px] transition-colors duration-700 hover:from-lime-500/40 hover:to-transparent flex flex-col justify-between">
+            <div class="h-full w-full rounded-[15px] bg-zinc-950/90 backdrop-blur-xl p-8 flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-lime-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+                <div class="flex justify-between items-center mb-12 relative z-10">
+                    <span class="text-xs text-zinc-500" style="font-family: 'JetBrains Mono', monospace;">04/</span>
+                    <iconify-icon icon="solar:shield-check-linear" class="text-lg text-zinc-600 group-hover:text-lime-400 transition-colors duration-300"></iconify-icon>
+                </div>
+
+                <div class="relative z-10 mt-auto">
+                    <h3 class="text-lg font-medium tracking-tight text-white flex items-center gap-2 mb-3">
+                        Risk Mitigation
+                        <iconify-icon icon="solar:arrow-right-up-linear" class="text-lime-500 opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 group-hover:-translate-y-1 duration-300"></iconify-icon>
+                    </h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed pr-2">
+                        Secure assets in mathematically isolated, programmatically compliant smart environments.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- WebGL Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- MAIN WEBGL: Waving Dot Grid ---
+            const mainMount = document.getElementById('webgl-main-mount');
+            if (mainMount) {
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(60, mainMount.clientWidth / mainMount.clientHeight, 0.1, 100);
+                const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+
+                renderer.setSize(mainMount.clientWidth, mainMount.clientHeight);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                mainMount.appendChild(renderer.domElement);
+
+                // Create Point Grid
+                const geometry = new THREE.PlaneGeometry(20, 15, 40, 30);
+                const material = new THREE.PointsMaterial({
+                    color: 0x84cc16, // Lime 500
+                    size: 0.04,
+                    transparent: true,
+                    opacity: 0.6
+                });
+
+                const plane = new THREE.Points(geometry, material);
+                plane.rotation.x = -Math.PI / 2.2;
+                plane.position.y = -2;
+                scene.add(plane);
+
+                camera.position.z = 5;
+                camera.position.y = 1;
+
+                // Animation
+                let time = 0;
+                const positions = geometry.attributes.position.array;
+                const initialZ = new Float32Array(positions.length / 3);
+                for(let i=0; i<positions.length; i+=3) {
+                    initialZ[i/3] = positions[i+2];
+                }
+
+                function animateMain() {
+                    requestAnimationFrame(animateMain);
+                    time += 0.02;
+
+                    for(let i=0; i<positions.length; i+=3) {
+                        const x = positions[i];
+                        const y = positions[i+1];
+                        // Wavy organic motion
+                        positions[i+2] = Math.sin(time * 0.5 + x * 0.5) * 0.5 + Math.cos(time * 0.3 + y * 0.5) * 0.5;
+                    }
+                    geometry.attributes.position.needsUpdate = true;
+
+                    renderer.render(scene, camera);
+                }
+                animateMain();
+
+                window.addEventListener('resize', () => {
+                    if(!mainMount) return;
+                    camera.aspect = mainMount.clientWidth / mainMount.clientHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(mainMount.clientWidth, mainMount.clientHeight);
+                });
+            }
+
+            // --- TERM WEBGL: Timeline Dots ---
+            const termMount = document.getElementById('webgl-term-mount');
+            if (termMount) {
+                const scene2 = new THREE.Scene();
+                const camera2 = new THREE.PerspectiveCamera(50, termMount.clientWidth / termMount.clientHeight, 0.1, 100);
+                const renderer2 = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+
+                renderer2.setSize(termMount.clientWidth, termMount.clientHeight);
+                renderer2.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                termMount.appendChild(renderer2.domElement);
+
+                const count = 30; // Representing dots in timeline
+                const geo2 = new THREE.BufferGeometry();
+                const pos2 = new Float32Array(count * 3);
+
+                // Spread dots in a horizontal line
+                for(let i=0; i<count; i++) {
+                    pos2[i*3] = (i / count) * 10 - 5; // X
+                    pos2[i*3 + 1] = 0;                // Y
+                    pos2[i*3 + 2] = 0;                // Z
+                }
+                geo2.setAttribute('position', new THREE.BufferAttribute(pos2, 3));
+
+                const mat2 = new THREE.PointsMaterial({
+                    color: 0x84cc16,
+                    size: 0.15,
+                    transparent: true,
+                    opacity: 0.8
+                });
+
+                const points2 = new THREE.Points(geo2, mat2);
+                scene2.add(points2);
+
+                // Add a connecting line behind the dots
+                const lineMat = new THREE.LineBasicMaterial({ color: 0x84cc16, transparent: true, opacity: 0.2 });
+                const line = new THREE.Line(geo2, lineMat);
+                scene2.add(line);
+
+                camera2.position.z = 6;
+
+                let time2 = 0;
+                function animateTerm() {
+                    requestAnimationFrame(animateTerm);
+                    time2 += 0.05;
+
+                    const p = geo2.attributes.position.array;
+                    for(let i=0; i<count; i++) {
+                        // Create a pulsing wave effect passing through the timeline
+                        const x = p[i*3];
+                        p[i*3 + 1] = Math.sin(time2 + x) * 0.3;
+                    }
+                    geo2.attributes.position.needsUpdate = true;
+
+                    renderer2.render(scene2, camera2);
+                }
+                animateTerm();
+
+                window.addEventListener('resize', () => {
+                    if(!termMount) return;
+                    camera2.aspect = termMount.clientWidth / termMount.clientHeight;
+                    camera2.updateProjectionMatrix();
+                    renderer2.setSize(termMount.clientWidth, termMount.clientHeight);
+                });
+            }
+        });
+    </script>
+
+</body></html>

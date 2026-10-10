@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Element 1: SEO & Metadata Optimization -->
+    <title>Autopilot v2.0 | Autonomous Engineering Workflow Orchestration</title>
+    <meta name="description" content="Put your engineering workflows on autopilot. Autonomously triage pull requests, heal flaky CI pipelines, and eliminate developer toil with context-aware AI orchestration.">
+    <meta name="keywords" content="engineering workflows, DevOps automation, CI/CD self-healing, AI code review, automated PR triage, developer platform">
+    <meta name="author" content="Autopilot Technologies Inc.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://autopilot.dev/">
+    <meta property="og:title" content="Autopilot v2.0 | Autonomous Engineering Workflow Orchestration">
+    <meta property="og:description" content="Eliminate engineering friction. Self-healing CI, autonomous PR reviews, and instant incident rollback in one intelligent dev engine.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Autopilot v2.0 | Autonomous Engineering Workflows">
+    <meta name="twitter:description" content="Put engineering workflows on autopilot. 72% faster PR cycle times, zero flaky CI bottlenecks.">
+    
+    <!-- Scripts & Frameworks -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Typography: Space Grotesk (Display) + Plus Jakarta Sans (Body) + JetBrains Mono (Code) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --font-display: 'Space Grotesk', -apple-system, sans-serif;
+            --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: #070709;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        .font-display {
+            font-family: var(--font-display);
+        }
+
+        .font-mono {
+            font-family: var(--font-mono);
+        }
+
+        .noise-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            opacity: 0.035;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        .mask-wrapper {
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: top;
+            padding-bottom: 0.1em;
+        }
+
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(18, 18, 22, 0.72);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-panel-glow {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%), rgba(14, 15, 20, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-panel-glow:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 0 35px -8px rgba(99, 102, 241, 0.25);
+        }
+
+        /* Subtle grid background */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        /* Terminal scrollbar */
+        .terminal-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .terminal-scroll::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="selection:bg-indigo-500/30 selection:text-white">
+
+    <div class="noise-bg"></div>
+
+    <!-- Ambient Glowing Orbs -->
+    <div class="fixed top-[-10%] left-[-10%] w-[650px] h-[650px] bg-indigo-600/10 blur-[130px] rounded-full pointer-events-none z-0"></div>
+    <div class="fixed top-[40%] right-[-15%] w-[700px] h-[700px] bg-cyan-600/[0.08] blur-[150px] rounded-full pointer-events-none z-0"></div>
+    <div class="fixed bottom-[-10%] left-[20%] w-[600px] h-[600px] bg-purple-600/[0.07] blur-[140px] rounded-full pointer-events-none z-0"></div>
+
+    <!-- ========================================================================= -->
+    <!-- ELEMENT 2: COMPANY LOGO & STICKY HEADER                                   -->
+    <!-- ========================================================================= -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#070709]/80 backdrop-blur-xl border-b border-white/[0.06]">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-400 p-[1px] shadow-lg shadow-indigo-500/20 group-hover:shadow-indigo-500/40 transition-all duration-300">
+                    <div class="w-full h-full bg-[#0d0e12] rounded-[11px] flex items-center justify-center">
+                        <iconify-icon icon="solar:widget-6-bold" class="text-indigo-400 text-lg group-hover:rotate-45 transition-transform duration-500"></iconify-icon>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="font-display font-bold text-lg tracking-tight text-white">AUTOPILOT</span>
+                    <span class="bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 font-mono text-[10px] font-medium px-2 py-0.5 rounded-full">v2.0</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#features" class="hover:text-white transition-colors">Features</a>
+                <a href="#simulator" class="hover:text-white transition-colors flex items-center gap-1.5">
+                    <span>Workflow Engine</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                </a>
+                <a href="#metrics" class="hover:text-white transition-colors">Impact</a>
+                <a href="#testimonials" class="hover:text-white transition-colors">Testimonials</a>
+                <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+            </nav>
+
+            <!-- Header Right CTAs & GitHub Pill -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-medium text-gray-300 hover:text-white hover:bg-white/[0.08] transition-all">
+                    <iconify-icon icon="solar:star-fall-minimalistic-bold" class="text-amber-400 text-sm"></iconify-icon>
+                    <span>14.8k</span>
+                    <span class="text-gray-500">stars</span>
+                </a>
+                <a href="#cta" class="text-xs font-semibold text-gray-300 hover:text-white px-3 py-2 transition-colors">
+                    Sign in
+                </a>
+                <a href="#cta" class="bg-white text-black px-4 py-2 rounded-full text-xs font-semibold hover:bg-gray-100 transition-all flex items-center gap-1.5 shadow-md shadow-white/10 hover:scale-[1.02]">
+                    <span>Deploy Free</span>
+                    <iconify-icon icon="solar:arrow-right-linear" class="text-sm"></iconify-icon>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="sm:hidden text-gray-400 hover:text-white p-2" aria-label="Toggle Menu">
+                <iconify-icon icon="solar:hamburger-menu-linear" class="text-2xl"></iconify-icon>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-drawer" class="hidden sm:hidden border-t border-white/[0.08] bg-[#070709] px-6 py-6 space-y-4">
+            <a href="#features" class="block text-gray-300 text-sm font-medium hover:text-white">Features</a>
+            <a href="#simulator" class="block text-gray-300 text-sm font-medium hover:text-white">Workflow Engine</a>
+            <a href="#metrics" class="block text-gray-300 text-sm font-medium hover:text-white">Impact</a>
+            <a href="#testimonials" class="block text-gray-300 text-sm font-medium hover:text-white">Testimonials</a>
+            <a href="#faq" class="block text-gray-300 text-sm font-medium hover:text-white">FAQ</a>
+            <div class="pt-4 border-t border-white/10 flex flex-col gap-3">
+                <a href="#cta" class="w-full text-center py-2.5 rounded-full bg-white text-black font-semibold text-sm">Deploy Free</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative z-10 pt-20">
+
+        <!-- ========================================================================= -->
+        <!-- ELEMENTS 3, 4, 5, 6: HERO SECTION (WITH UPGRADED 3D GSAP CARDS)           -->
+        <!-- ========================================================================= -->
+        <section class="relative min-h-[90vh] flex items-center max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 py-16 lg:py-24">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+                
+                <!-- Left Hero Content -->
+                <div class="lg:col-span-7 z-20 relative">
+                    
+                    <!-- Version & Status Pill -->
+                    <div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-medium text-gray-300 mb-6 backdrop-blur-md">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span class="text-white font-semibold">Engine v2.0 Released</span>
+                        <span class="text-gray-500">•</span>
+                        <span class="text-gray-400">Autonomous Triaging & Self-Healing CI</span>
+                    </div>
+
+                    <!-- Element 3: Massive SEO-Optimized Title -->
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight leading-[1.08] headline-container flex flex-wrap gap-x-[0.25em] gap-y-2 text-white">
+                        <div class="mask-wrapper"><span class="reveal-word block translate-y-full">Put</span></div>
+                        <div class="mask-wrapper"><span class="reveal-word block translate-y-full">engineering</span></div>
+                        <div class="mask-wrapper"><span class="reveal-word block translate-y-full">workflows</span></div>
+                        <div class="mask-wrapper"><span class="reveal-word block translate-y-full">on</span></div>
+                        <div class="mask-wrapper"><span class="reveal-word block translate-y-full bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-cyan-300 to-white">autopilot</span></div>
+                    </h1>
+
+                    <!-- Element 3 Subtitle: Crystal Clear Value Proposition -->
+                    <p class="mt-6 text-base sm:text-lg md:text-xl text-gray-300 font-normal leading-relaxed max-w-2xl">
+                        Eliminate PR review bottlenecks, flaky CI test failures, and manual incident routing. Autopilot embeds deep inside your git tree, autonomously triaging tickets and healing broken builds before your team wakes up.
+                    </p>
+
+                    <!-- Element 4: Primary & Secondary CTAs + CLI Copy Box -->
+                    <div class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 cta-container opacity-0 translate-y-4">
+                        <a href="#cta" class="bg-white text-black px-6 py-3.5 rounded-full text-sm font-semibold hover:bg-gray-100 transition-all flex items-center justify-center gap-2 shadow-xl shadow-white/10 hover:scale-[1.02]">
+                            <span>Start Building Free</span>
+                            <iconify-icon icon="solar:arrow-right-linear" class="text-lg"></iconify-icon>
+                        </a>
+                        
+                        <!-- Interactive CLI Command Box -->
+                        <div class="flex items-center justify-between gap-3 px-4 py-3 rounded-full bg-white/[0.05] border border-white/10 backdrop-blur-md text-xs font-mono text-gray-300 hover:border-white/20 transition-all group">
+                            <div class="flex items-center gap-2">
+                                <span class="text-indigo-400">$</span>
+                                <span id="cli-command">npx autopilot-engine init</span>
+                            </div>
+                            <button id="copy-cli-btn" class="text-gray-400 hover:text-white transition-colors p-1" title="Copy command">
+                                <iconify-icon id="copy-icon" icon="solar:copy-linear" class="text-sm"></iconify-icon>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Micro-copy beneath CTA -->
+                    <div class="mt-3 flex items-center gap-4 text-[11px] text-gray-400">
+                        <span class="flex items-center gap-1.5"><iconify-icon icon="solar:check-circle-bold" class="text-emerald-400"></iconify-icon> No credit card required</span>
+                        <span class="flex items-center gap-1.5"><iconify-icon icon="solar:check-circle-bold" class="text-emerald-400"></iconify-icon> 2-minute GitHub App setup</span>
+                        <span class="flex items-center gap-1.5 hidden md:flex"><iconify-icon icon="solar:check-circle-bold" class="text-emerald-400"></iconify-icon> SOC 2 Type II Certified</span>
+                    </div>
+
+                    <!-- Element 5: Hero Social Proof & Avatars -->
+                    <div class="mt-10 pt-8 border-t border-white/[0.08] flex flex-wrap items-center gap-6">
+                        <div class="flex -space-x-2.5 overflow-hidden">
+                            <img class="inline-block h-9 w-9 rounded-full ring-2 ring-[#070709]" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&auto=format&fit=crop" alt="Staff Engineer">
+                            <img class="inline-block h-9 w-9 rounded-full ring-2 ring-[#070709]" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&auto=format&fit=crop" alt="Tech Lead">
+                            <img class="inline-block h-9 w-9 rounded-full ring-2 ring-[#070709]" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&auto=format&fit=crop" alt="VP of Engineering">
+                            <img class="inline-block h-9 w-9 rounded-full ring-2 ring-[#070709]" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&auto=format&fit=crop" alt="DevOps Architect">
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-1 text-amber-400 text-sm">
+                                <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold"></iconify-icon>
+                                <span class="font-bold text-white text-xs ml-1.5">4.9/5</span>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-0.5">Trusted by <strong class="text-gray-200">14,200+ engineers</strong> at high-growth tech teams</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Hero: Enhanced 3D Parallax Stack of Dev Task Cards -->
+                <div class="lg:col-span-5 relative h-[520px] sm:h-[600px] flex items-center justify-center">
+                    
+                    <div class="parallax-container relative w-full h-full max-w-[500px]" style="transform-style: preserve-3d; transform: perspective(1200px) rotateX(14deg) rotateY(-16deg) rotateZ(6deg);">
+                        
+                        <!-- Floating Background Card: DEV-1042 -->
+                        <div class="absolute glass-panel rounded-2xl p-4 w-[340px] shadow-2xl transition-transform duration-300" style="top: 2%; left: -5%; filter: blur(3px); opacity: 0.55; transform: translateZ(-60px);">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-400 font-mono text-xs">DEV-1042</span>
+                                <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 text-gray-400">Merged</span>
+                            </div>
+                            <p class="text-gray-300 text-xs font-medium">Reduce primary API latency by 45%</p>
+                        </div>
+
+                        <!-- Card DEV-1043: Caching Layer -->
+                        <div class="absolute glass-panel-glow rounded-2xl p-5 w-[380px] shadow-2xl z-20" style="top: 18%; left: 8%; transform: translateZ(20px);">
+                            <div class="flex justify-between items-center mb-3">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-indigo-400 font-mono text-xs font-semibold">DEV-1043</span>
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                                    <span class="text-[10px] text-emerald-400 font-medium">Auto-Healing</span>
+                                </div>
+                                <div class="w-6 h-6 rounded-full bg-indigo-500/20 border border-indigo-500/40 flex items-center justify-center">
+                                    <iconify-icon icon="solar:cpu-bolt-bold" class="text-indigo-400 text-xs"></iconify-icon>
+                                </div>
+                            </div>
+                            <p class="text-white text-sm font-semibold mb-3">Implement global Redis edge caching layer</p>
+                            
+                            <!-- Micro Progress bar -->
+                            <div class="w-full bg-white/10 rounded-full h-1.5 mb-4 overflow-hidden">
+                                <div class="bg-gradient-to-r from-indigo-500 to-cyan-400 h-1.5 rounded-full w-4/5 animate-pulse"></div>
+                            </div>
+
+                            <div class="flex items-center justify-between text-xs">
+                                <div class="flex items-center gap-2">
+                                    <div class="bg-red-500/10 border border-red-500/30 text-red-400 px-2 py-0.5 rounded text-[11px] font-medium flex items-center gap-1">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span>
+                                        Infrastructure
+                                    </div>
+                                    <span class="text-gray-400 text-[11px]">CI passed (42/42)</span>
+                                </div>
+                                <span class="font-mono text-gray-500 text-[10px]">2m ago</span>
+                            </div>
+                        </div>
+
+                        <!-- Card DEV-091: Hydration Fix -->
+                        <div class="absolute glass-panel-glow rounded-2xl p-5 w-[390px] shadow-2xl z-10" style="top: 48%; left: 16%; transform: translateZ(5px);">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-indigo-400 font-mono text-xs font-semibold">DEV-091</span>
+                                <div class="flex items-center gap-1.5 text-xs text-amber-400 bg-amber-400/10 px-2 py-0.5 rounded border border-amber-400/20">
+                                    <iconify-icon icon="solar:shield-warning-bold"></iconify-icon>
+                                    <span>AI Suggested Fix</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-200 text-sm font-semibold mb-3">Fix dashboard SSR hydration mismatch</p>
+                            
+                            <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 font-mono text-[11px] text-emerald-400 mb-3 flex items-center justify-between">
+                                <span>+ useEffect(() => setIsMounted(true))</span>
+                                <iconify-icon icon="solar:check-circle-bold" class="text-emerald-400 text-sm"></iconify-icon>
+                            </div>
+
+                            <div class="flex items-center justify-between text-xs text-gray-400">
+                                <span class="text-xs">Reviewed by Autopilot Bot</span>
+                                <span class="text-emerald-400 font-medium">Ready to merge</span>
+                            </div>
+                        </div>
+
+                        <!-- Card DEV-2201: Legacy Deprecation -->
+                        <div class="absolute glass-panel rounded-2xl p-4 w-[340px] shadow-2xl" style="top: 76%; left: 3%; filter: blur(1.5px); opacity: 0.7; transform: translateZ(-30px);">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-gray-500 font-mono text-xs">DEV-2201</span>
+                                <span class="text-[10px] text-gray-400">Scheduled 03:00 UTC</span>
+                            </div>
+                            <p class="text-gray-300 text-xs font-medium">Auto-deprecate legacy v1 GraphQL resolvers</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- LOGO MARQUEE: SOCIAL PROOF OF ADOPTION                                    -->
+        <!-- ========================================================================= -->
+        <section class="border-y border-white/[0.06] bg-[#070709]/60 backdrop-blur-md py-10 relative overflow-hidden">
+            <div class="max-w-[1400px] mx-auto px-6 text-center mb-6">
+                <p class="text-xs font-mono tracking-widest text-gray-400 uppercase">
+                    Integrated across modern engineering stacks & platforms
+                </p>
+            </div>
+            
+            <div class="flex items-center justify-center flex-wrap gap-8 md:gap-14 max-w-5xl mx-auto px-6 opacity-70">
+                <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
+                    <iconify-icon icon="simple-icons:github" class="text-2xl"></iconify-icon>
+                    <span class="font-display font-semibold tracking-tight text-sm">GitHub Actions</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
+                    <iconify-icon icon="simple-icons:gitlab" class="text-2xl text-orange-400"></iconify-icon>
+                    <span class="font-display font-semibold tracking-tight text-sm">GitLab CI</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
+                    <iconify-icon icon="simple-icons:linear" class="text-2xl text-indigo-400"></iconify-icon>
+                    <span class="font-display font-semibold tracking-tight text-sm">Linear</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
+                    <iconify-icon icon="simple-icons:datadog" class="text-2xl text-purple-400"></iconify-icon>
+                    <span class="font-display font-semibold tracking-tight text-sm">Datadog</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
+                    <iconify-icon icon="simple-icons:sentry" class="text-2xl text-pink-400"></iconify-icon>
+                    <span class="font-display font-semibold tracking-tight text-sm">Sentry</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
+                    <iconify-icon icon="simple-icons:slack" class="text-2xl text-emerald-400"></iconify-icon>
+                    <span class="font-display font-semibold tracking-tight text-sm">Slack</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
+                    <iconify-icon icon="simple-icons:kubernetes" class="text-2xl text-blue-400"></iconify-icon>
+                    <span class="font-display font-semibold tracking-tight text-sm">Kubernetes</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- ELEMENT 6: INTERACTIVE MEDIA / WORKFLOW ENGINE SIMULATOR                  -->
+        <!-- ========================================================================= -->
+        <section id="simulator" class="py-24 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 relative">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-mono mb-4">
+                    <span>LIVE ORCHESTRATION CANVAS</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-white tracking-tight">
+                    See the autonomous engine in action
+                </h2>
+                <p class="mt-4 text-gray-400 text-base md:text-lg">
+                    Select a workflow scenario to see how Autopilot ingests events, reasons across full repo context, and writes production-ready commits.
+                </p>
+
+                <!-- Interactive Tab Switchers -->
+                <div class="mt-8 inline-flex p-1.5 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md max-w-full overflow-x-auto">
+                    <button class="sim-tab active px-5 py-2.5 rounded-full text-xs font-semibold transition-all bg-white text-black shadow-md" data-target="pr-review">
+                        Autonomous PR Auto-Review
+                    </button>
+                    <button class="sim-tab px-5 py-2.5 rounded-full text-xs font-medium text-gray-400 hover:text-white transition-all" data-target="ci-heal">
+                        Self-Healing CI Pipeline
+                    </button>
+                    <button class="sim-tab px-5 py-2.5 rounded-full text-xs font-medium text-gray-400 hover:text-white transition-all" data-target="canary-rollback">
+                        Zero-Downtime Incident Rollback
+                    </button>
+                </div>
+            </div>
+
+            <!-- Terminal Simulator Window -->
+            <div class="glass-panel-glow rounded-3xl border border-white/10 overflow-hidden shadow-2xl max-w-5xl mx-auto">
+                
+                <!-- Terminal Header Bar -->
+                <div class="bg-[#0e0f14] px-6 py-4 border-b border-white/[0.08] flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                        </div>
+                        <span class="font-mono text-xs text-gray-400 ml-2" id="sim-filename">autopilot-daemon :: workflow-orchestrator.ts</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-xs font-mono">
+                        <span class="text-emerald-400 flex items-center gap-1">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                            LIVE STREAM
+                        </span>
+                        <span class="text-gray-500">|</span>
+                        <span class="text-gray-400">Latency: 28ms</span>
+                    </div>
+                </div>
+
+                <!-- Terminal Content Box -->
+                <div class="p-6 md:p-8 font-mono text-xs md:text-sm bg-[#090a0e] terminal-scroll max-h-[480px] overflow-y-auto space-y-4" id="sim-output">
+                    <!-- Dynamic Log Lines Injected by JS -->
+                    <div class="text-gray-500">[00:01:14 UTC] Trigger: Pull Request #482 opened on branch 'feat/cache-invalidation'</div>
+                    <div class="text-indigo-400 flex items-center gap-2">
+                        <iconify-icon icon="solar:radar-2-bold" class="animate-spin text-base"></iconify-icon>
+                        <span>[Autopilot] Scanning git graph & symbol dependency tree (1,480 files indexed)...</span>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-1.5 text-gray-300">
+                        <div class="text-amber-400 font-semibold">⚠ Warning detected in src/lib/redis.ts:</div>
+                        <div class="text-gray-400">Line 48: Connection pool leak identified on unhandled ECONNRESET event.</div>
+                        <div class="text-emerald-400">+ Applying zero-allocation reconnect handler with exponential backoff...</div>
+                    </div>
+                    <div class="text-cyan-400">[Autopilot] Running sandbox unit suite (48 tests)...</div>
+                    <div class="text-emerald-400 flex items-center gap-2">
+                        <iconify-icon icon="solar:check-circle-bold" class="text-base"></iconify-icon>
+                        <span>Verification PASSED: All 48 test assertions succeeded in 1.4s.</span>
+                    </div>
+                    <div class="text-white font-semibold flex items-center gap-2 pt-2 border-t border-white/5">
+                        <iconify-icon icon="solar:git-commit-bold" class="text-indigo-400 text-base"></iconify-icon>
+                        <span>[Commit auto-authored] "fix(redis): patch connection pool leak on reset" pushed to PR #482</span>
+                    </div>
+                </div>
+
+                <!-- Terminal Footer Status Bar -->
+                <div class="bg-[#0b0c10] px-6 py-3 border-t border-white/[0.06] flex items-center justify-between text-xs text-gray-400">
+                    <span class="flex items-center gap-2">
+                        <iconify-icon icon="solar:shield-check-bold" class="text-indigo-400"></iconify-icon>
+                        <span>Signed with GPG Key: <code class="text-gray-300">0x8F94D2...B8</code></span>
+                    </span>
+                    <button id="rerun-sim-btn" class="hover:text-white flex items-center gap-1.5 font-medium transition-colors">
+                        <iconify-icon icon="solar:restart-bold"></iconify-icon>
+                        Re-run Simulation
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- ELEMENT 7: CORE BENEFITS & BENTO FEATURES GRID                            -->
+        <!-- ========================================================================= -->
+        <section id="features" class="py-24 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24">
+            
+            <div class="max-w-3xl mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono mb-4">
+                    <span>DESIGNED FOR HIGH-VELOCITY ENGINEERING</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-white tracking-tight">
+                    Every repetitive DevOps task, handled autonomously
+                </h2>
+                <p class="mt-4 text-gray-400 text-base md:text-lg">
+                    Stop wasting 30% of engineering bandwidth on triaging tickets, re-running flaky test suites, and hunting for memory leaks.
+                </p>
+            </div>
+
+            <!-- Bento Grid 6-Card Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Card 1 (Span 2 cols on LG): Context-Aware PR Reviews -->
+                <div class="lg:col-span-2 glass-panel-glow rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden group">
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-2xl mb-6">
+                            <iconify-icon icon="solar:code-file-bold"></iconify-icon>
+                        </div>
+                        <span class="text-xs font-mono text-indigo-400 font-semibold tracking-wider uppercase">01 / Code Intelligence</span>
+                        <h3 class="text-2xl font-display font-bold text-white mt-2 mb-3">
+                            Full-Repo Semantic Code Reviews
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed max-w-xl">
+                            Unlike basic linters or isolated LLM bots that look only at git diffs, Autopilot constructs an in-memory Abstract Syntax Tree (AST) of your whole monorepo to catch cross-module breaking changes.
+                        </p>
+                    </div>
+
+                    <!-- Visual Code Preview inside Card -->
+                    <div class="mt-8 rounded-2xl bg-[#090a0e] border border-white/10 p-5 font-mono text-xs overflow-x-auto">
+                        <div class="flex items-center justify-between text-gray-500 pb-3 mb-3 border-b border-white/5">
+                            <span>services/billing/charge.ts</span>
+                            <span class="text-emerald-400 font-sans font-semibold text-[11px]">99.4% Confidence</span>
+                        </div>
+                        <p class="text-red-400 line-through">- const invoice = await stripe.invoices.create(customer);</p>
+                        <p class="text-emerald-400">+ const invoice = await idempotencyWrapper(() => stripe.invoices.create(customer));</p>
+                        <p class="text-gray-500 mt-2">// Autopilot: Prevented potential double-charge race condition under concurrent webhooks.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Self-Healing CI/CD -->
+                <div class="glass-panel-glow rounded-3xl p-8 flex flex-col justify-between relative group">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-2xl mb-6">
+                            <iconify-icon icon="solar:healing-bold"></iconify-icon>
+                        </div>
+                        <span class="text-xs font-mono text-emerald-400 font-semibold tracking-wider uppercase">02 / Pipeline Resilience</span>
+                        <h3 class="text-2xl font-display font-bold text-white mt-2 mb-3">
+                            Flaky Test Auto-Healing
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Detects timing bugs, race conditions, and unseeded database states in CI. Automatically quarantine flaky specs and opens surgical fixes.
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-center gap-3 pt-6 border-t border-white/5">
+                        <span class="text-3xl font-display font-bold text-white">0.02%</span>
+                        <span class="text-xs text-gray-400">Post-install CI failure rate across 500k runs</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Secret Leak & Guardrails -->
+                <div class="glass-panel-glow rounded-3xl p-8 flex flex-col justify-between relative group">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 text-2xl mb-6">
+                            <iconify-icon icon="solar:shield-keyhole-bold"></iconify-icon>
+                        </div>
+                        <span class="text-xs font-mono text-purple-400 font-semibold tracking-wider uppercase">03 / DevSecOps</span>
+                        <h3 class="text-2xl font-display font-bold text-white mt-2 mb-3">
+                            Zero-Trust Secret Guardrails
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Intercepts leaked API tokens, private RSA keys, and hardcoded database URIs before git push. Triggers automated vault rotation in AWS Secrets Manager or HashiCorp.
+                        </p>
+                    </div>
+                    <div class="mt-6 text-xs text-purple-300 font-mono bg-purple-500/10 p-3 rounded-xl border border-purple-500/20">
+                        ✔ SOC 2 Type II • Zero Data Retention
+                    </div>
+                </div>
+
+                <!-- Card 4: Two-Way Issue Sync -->
+                <div class="glass-panel-glow rounded-3xl p-8 flex flex-col justify-between relative group">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-2xl mb-6">
+                            <iconify-icon icon="solar:refresh-square-bold"></iconify-icon>
+                        </div>
+                        <span class="text-xs font-mono text-cyan-400 font-semibold tracking-wider uppercase">04 / Issue Triage</span>
+                        <h3 class="text-2xl font-display font-bold text-white mt-2 mb-3">
+                            Bi-Directional Linear & Jira Sync
+                        </h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Turns bug tickets into reproducible test scripts. When the pull request merges, tickets are updated, closed, and summarized automatically.
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-center gap-2 text-xs text-gray-400">
+                        <iconify-icon icon="solar:check-circle-bold" class="text-cyan-400"></iconify-icon>
+                        <span>Supports Linear, Jira, GitHub Projects</span>
+                    </div>
+                </div>
+
+                <!-- Card 5 (Span 2 cols on LG): Declarative YAML Workflow Engine -->
+                <div class="lg:col-span-2 glass-panel-glow rounded-3xl p-8 flex flex-col justify-between relative group">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl mb-6">
+                                <iconify-icon icon="solar:slider-vertical-bold"></iconify-icon>
+                            </div>
+                            <span class="text-xs font-mono text-amber-400 font-semibold tracking-wider uppercase">05 / Total Programmability</span>
+                            <h3 class="text-2xl font-display font-bold text-white mt-2 mb-3">
+                                Write Orchestrations in YAML or TypeScript
+                            </h3>
+                            <p class="text-gray-400 text-sm leading-relaxed max-w-md">
+                                Define your own custom governance rules: mandate senior review on payment paths, run automated load tests when DB queries change, or spin up isolated preview clusters.
+                            </p>
+                        </div>
+
+                        <!-- Snippet Preview -->
+                        <div class="rounded-2xl bg-[#090a0e] border border-white/10 p-4 font-mono text-[11px] text-gray-300 w-full md:w-80">
+                            <div class="text-gray-500 mb-2 font-semibold">.autopilot/pipeline.yml</div>
+                            <p><span class="text-indigo-400">on:</span> pull_request.opened</p>
+                            <p><span class="text-indigo-400">rules:</span></p>
+                            <p class="pl-3"><span class="text-cyan-300">- match:</span> "src/auth/**"</p>
+                            <p class="pl-6"><span class="text-amber-300">security_audit:</span> strict</p>
+                            <p class="pl-6"><span class="text-amber-300">auto_benchmark:</span> true</p>
+                            <p class="pl-6"><span class="text-emerald-400">notify:</span> "#sec-alerts"</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- IMPACT METRICS: DATA-DRIVEN PROOF                                         -->
+        <!-- ========================================================================= -->
+        <section id="metrics" class="py-20 border-y border-white/[0.06] bg-[#070709]/80 backdrop-blur-xl relative">
+            <div class="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center">
+                    
+                    <div class="p-4">
+                        <div class="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-white tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-white">
+                            -72%
+                        </div>
+                        <p class="text-sm font-semibold text-gray-200 mt-2">PR Cycle Time</p>
+                        <p class="text-xs text-gray-500 mt-1">From branch creation to production merge</p>
+                    </div>
+
+                    <div class="p-4">
+                        <div class="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-white tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-white">
+                            12.4M
+                        </div>
+                        <p class="text-sm font-semibold text-gray-200 mt-2">Workflows Orchestrated</p>
+                        <p class="text-xs text-gray-500 mt-1">Tested across monorepos and polyrepos</p>
+                    </div>
+
+                    <div class="p-4">
+                        <div class="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-white tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-white">
+                            $480K
+                        </div>
+                        <p class="text-sm font-semibold text-gray-200 mt-2">Avg. Annual Savings</p>
+                        <p class="text-xs text-gray-500 mt-1">Per 50 engineers in reclaimed productivity</p>
+                    </div>
+
+                    <div class="p-4">
+                        <div class="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-white tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-white">
+                            99.98%
+                        </div>
+                        <p class="text-sm font-semibold text-gray-200 mt-2">CI Pass Rate</p>
+                        <p class="text-xs text-gray-500 mt-1">Flaky runs healed before blocking staging</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- ELEMENT 8: CUSTOMER TESTIMONIALS                                          -->
+        <!-- ========================================================================= -->
+        <section id="testimonials" class="py-24 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-mono mb-4">
+                    <span>ENGINEER VERIFIED REVIEWS</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-white tracking-tight">
+                    Trusted by developers who ship fast
+                </h2>
+                <p class="mt-4 text-gray-400 text-base md:text-lg">
+                    Read what engineering leaders and DevOps architects say about migrating to autonomous orchestration.
+                </p>
+            </div>
+
+            <!-- Testimonials 3-Column Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Testimonial 1 -->
+                <div class="glass-panel-glow rounded-3xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-6">
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        </div>
+                        <p class="text-gray-200 text-sm md:text-base leading-relaxed mb-6 font-normal">
+                            "Before Autopilot, our senior engineers spent 15 hours a week reviewing mechanical PRs and re-running failed CI checks. Now, 65% of trivial fixes are handled automatically. Our velocity has never been higher."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3.5 pt-6 border-t border-white/5">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&h=120&auto=format&fit=crop" class="w-11 h-11 rounded-full object-cover ring-2 ring-indigo-500/30" alt="Elena Rostova">
+                        <div>
+                            <h4 class="text-white text-sm font-semibold">Elena Rostova</h4>
+                            <p class="text-xs text-gray-400">VP of Engineering @ HyperCloud</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="glass-panel-glow rounded-3xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-6">
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        </div>
+                        <p class="text-gray-200 text-sm md:text-base leading-relaxed mb-6 font-normal">
+                            "The self-healing CI is like magic. We had a persistent race condition in our distributed integration suite that 4 developers couldn't pinpoint. Autopilot reproduced it in isolated containers and submitted a clean mutex fix."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3.5 pt-6 border-t border-white/5">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&auto=format&fit=crop" class="w-11 h-11 rounded-full object-cover ring-2 ring-cyan-500/30" alt="Marcus Chen">
+                        <div>
+                            <h4 class="text-white text-sm font-semibold">Marcus Chen</h4>
+                            <p class="text-xs text-gray-400">Staff Platform Architect @ FinScale</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="glass-panel-glow rounded-3xl p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm mb-6">
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                            <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        </div>
+                        <p class="text-gray-200 text-sm md:text-base leading-relaxed mb-6 font-normal">
+                            "Zero data retention was non-negotiable for our SOC2 compliance audit. Autopilot's private VPC worker architecture gave our infosec team full peace of mind while 10x-ing our deployment speed."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3.5 pt-6 border-t border-white/5">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&auto=format&fit=crop" class="w-11 h-11 rounded-full object-cover ring-2 ring-purple-500/30" alt="David Sterling">
+                        <div>
+                            <h4 class="text-white text-sm font-semibold">David Sterling</h4>
+                            <p class="text-xs text-gray-400">Chief Security Officer @ VaultSafe</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- ELEMENT 9: INTERACTIVE FAQ ACCORDION                                      -->
+        <!-- ========================================================================= -->
+        <section id="faq" class="py-24 max-w-4xl mx-auto px-6 md:px-12">
+            
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-gray-300 text-xs font-mono mb-4">
+                    <span>FREQUENTLY ASKED QUESTIONS</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-white tracking-tight">
+                    Frequently Asked Questions
+                </h2>
+                <p class="mt-4 text-gray-400 text-base">
+                    Everything you need to know about security, architecture, and onboarding.
+                </p>
+            </div>
+
+            <!-- Accordion List -->
+            <div class="space-y-4" id="faq-accordion">
+                
+                <!-- FAQ Item 1 -->
+                <div class="faq-item glass-panel rounded-2xl border border-white/10 overflow-hidden transition-all duration-200">
+                    <button class="faq-toggle w-full p-6 text-left flex items-center justify-between text-base font-semibold text-white hover:text-indigo-300 transition-colors" aria-expanded="false">
+                        <span>How does Autopilot ensure our proprietary source code is protected?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-icon text-xl text-gray-400 transition-transform duration-300"></iconify-icon>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed">
+                        We enforce strict **Zero Code Retention (ZCR)**. Your source code and AST trees are processed entirely in ephemeral, sandboxed RAM containers that terminate immediately after analysis. We never use your proprietary code or internal metadata to train public LLM models. For enterprise organizations, we offer complete Self-Hosted VPC deployments.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item glass-panel rounded-2xl border border-white/10 overflow-hidden transition-all duration-200">
+                    <button class="faq-toggle w-full p-6 text-left flex items-center justify-between text-base font-semibold text-white hover:text-indigo-300 transition-colors" aria-expanded="false">
+                        <span>How long does onboarding take, and does it require migrating from GitHub Actions?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-icon text-xl text-gray-400 transition-transform duration-300"></iconify-icon>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed">
+                        Setup takes less than 2 minutes. Autopilot connects as a standard GitHub App or GitLab webhook. It does not replace your existing GitHub Actions, CircleCI, or GitLab pipelines—instead, it acts as an intelligent supervisor that sits on top, catching errors and auto-submitting pull request fixes.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item glass-panel rounded-2xl border border-white/10 overflow-hidden transition-all duration-200">
+                    <button class="faq-toggle w-full p-6 text-left flex items-center justify-between text-base font-semibold text-white hover:text-indigo-300 transition-colors" aria-expanded="false">
+                        <span>How is Autopilot different from GitHub Copilot or cursor-style autocomplete?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-icon text-xl text-gray-400 transition-transform duration-300"></iconify-icon>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed">
+                        Copilot lives in your local IDE editor to autocomplete lines of code as you type. Autopilot operates on the **entire repository and DevOps pipeline lifecycle**. It triages incoming issue tickets, resolves merge conflicts across complex branches, benchmarks PR performance, and automatically heals broken builds in continuous integration.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item glass-panel rounded-2xl border border-white/10 overflow-hidden transition-all duration-200">
+                    <button class="faq-toggle w-full p-6 text-left flex items-center justify-between text-base font-semibold text-white hover:text-indigo-300 transition-colors" aria-expanded="false">
+                        <span>What happens if an automated pull request contains a regression?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-icon text-xl text-gray-400 transition-transform duration-300"></iconify-icon>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed">
+                        By default, Autopilot operates under an **Assisted Governance mode**. It opens pull requests with detailed reasoning transcripts, test execution proofs, and code diffs for human sign-off. You can configure granular rules where safe changes (e.g. dependency bumps, documentation, linting) merge automatically once 100% of CI checks pass.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item glass-panel rounded-2xl border border-white/10 overflow-hidden transition-all duration-200">
+                    <button class="faq-toggle w-full p-6 text-left flex items-center justify-between text-base font-semibold text-white hover:text-indigo-300 transition-colors" aria-expanded="false">
+                        <span>Can we deploy on our own AWS, GCP, or Kubernetes clusters?</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear" class="faq-icon text-xl text-gray-400 transition-transform duration-300"></iconify-icon>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 text-sm text-gray-400 leading-relaxed">
+                        Yes. Our Enterprise tier includes production-ready Helm charts and Terraform modules for deploying private Autopilot runner agents inside your isolated VPC, air-gapped networks, or on-premise hardware with custom LLM endpoints (like Azure OpenAI or self-hosted vLLM).
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- ELEMENT 10: FINAL HIGH-CONVERSION CTA                                     -->
+        <!-- ========================================================================= -->
+        <section id="cta" class="py-24 max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24 relative">
+            
+            <div class="relative rounded-3xl overflow-hidden p-8 md:p-16 lg:p-20 text-center border border-indigo-500/30 bg-gradient-to-b from-[#10121d] to-[#070709] shadow-2xl">
+                
+                <!-- Ambient Backlight inside Banner -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-indigo-500/20 blur-[120px] rounded-full pointer-events-none"></div>
+
+                <div class="relative z-10 max-w-3xl mx-auto">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/40 text-indigo-300 text-xs font-mono mb-6">
+                        <span>GET STARTED IN 2 MINUTES</span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-5xl md:text-6xl font-display font-bold text-white tracking-tight leading-tight">
+                        Ready to eliminate engineering toil forever?
+                    </h2>
+
+                    <p class="mt-6 text-base sm:text-lg text-gray-300 leading-relaxed">
+                        Join over 14,000 engineers building faster. Connect your GitHub repository today and let the autonomous engine resolve your backlog.
+                    </p>
+
+                    <!-- Email Conversion Input -->
+                    <form class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto" onsubmit="event.preventDefault(); alert('Welcome aboard! Access instructions sent to your work email.');">
+                        <input type="email" required placeholder="Enter your work email..." class="w-full px-5 py-3.5 rounded-full bg-white/10 border border-white/20 text-white placeholder-gray-400 text-sm focus:outline-none focus:border-indigo-400 backdrop-blur-md">
+                        <button type="submit" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white text-black font-semibold text-sm hover:bg-gray-100 transition-all shadow-xl shadow-white/10 flex items-center justify-center gap-2 whitespace-nowrap hover:scale-105">
+                            <span>Get Started</span>
+                            <iconify-icon icon="solar:arrow-right-linear" class="text-base"></iconify-icon>
+                        </button>
+                    </form>
+
+                    <!-- Trust indicators -->
+                    <div class="mt-8 flex flex-wrap items-center justify-center gap-6 text-xs text-gray-400">
+                        <span class="flex items-center gap-1.5"><iconify-icon icon="solar:shield-check-bold" class="text-emerald-400"></iconify-icon> SOC 2 Type II Certified</span>
+                        <span class="flex items-center gap-1.5"><iconify-icon icon="solar:lock-keyhole-bold" class="text-cyan-400"></iconify-icon> Zero Data Retention</span>
+                        <span class="flex items-center gap-1.5"><iconify-icon icon="solar:card-2-bold" class="text-indigo-400"></iconify-icon> 14-day free trial</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================================================= -->
+    <!-- ELEMENT 11: COMPREHENSIVE FOOTER & LEGAL PAGES                            -->
+    <!-- ========================================================================= -->
+    <footer class="border-t border-white/[0.08] bg-[#050507] text-gray-400 text-sm pt-16 pb-12 relative z-10">
+        <div class="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-24">
+            
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-10 pb-16 border-b border-white/[0.06]">
+                
+                <!-- Col 1: Brand & Status -->
+                <div class="col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white">
+                            <iconify-icon icon="solar:widget-6-bold" class="text-base"></iconify-icon>
+                        </div>
+                        <span class="font-display font-bold text-white text-base tracking-tight">AUTOPILOT</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed max-w-sm mb-6">
+                        The autonomous engineering orchestrator that eliminates manual triage, heals flaky continuous integration pipelines, and delivers 72% faster cycle times.
+                    </p>
+                    
+                    <!-- Live Status Badge -->
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>All Systems Operational (99.99%)</span>
+                    </div>
+                </div>
+
+                <!-- Col 2: Product -->
+                <div>
+                    <h5 class="text-white font-semibold text-xs uppercase tracking-wider mb-4 font-mono">Product</h5>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="#features" class="hover:text-white transition-colors">Code Reviews</a></li>
+                        <li><a href="#simulator" class="hover:text-white transition-colors">Self-Healing CI</a></li>
+                        <li><a href="#features" class="hover:text-white transition-colors">Incident Rollback</a></li>
+                        <li><a href="#features" class="hover:text-white transition-colors">Secret Guardrails</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Pricing & ROI</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Changelog (v2.0)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Developers -->
+                <div>
+                    <h5 class="text-white font-semibold text-xs uppercase tracking-wider mb-4 font-mono">Developers</h5>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="#" class="hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">CLI Reference</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">YAML Specification</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">GitHub Action</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">REST & GraphQL APIs</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">TypeScript SDK</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Company & Legal -->
+                <div>
+                    <h5 class="text-white font-semibold text-xs uppercase tracking-wider mb-4 font-mono">Company & Trust</h5>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Security Center</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">SOC 2 Compliance</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact Sales</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Sub-Footer -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+                <p>&copy; 2026 Autopilot Technologies Inc. All rights reserved.</p>
+                <div class="flex items-center gap-5">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hover:text-white text-base transition-colors" title="GitHub">
+                        <iconify-icon icon="simple-icons:github"></iconify-icon>
+                    </a>
+                    <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="hover:text-white text-base transition-colors" title="X (Twitter)">
+                        <iconify-icon icon="simple-icons:x"></iconify-icon>
+                    </a>
+                    <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="hover:text-white text-base transition-colors" title="Discord">
+                        <iconify-icon icon="simple-icons:discord"></iconify-icon>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hover:text-white text-base transition-colors" title="LinkedIn">
+                        <iconify-icon icon="simple-icons:linkedin"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ========================================================================= -->
+    <!-- INTERACTIVE SCRIPTS: GSAP REVEALS, PARALLAX, SIMULATOR & ACCORDION        -->
+    <!-- ========================================================================= -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // 1. Staggered Hero Text Reveal
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".headline-container",
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            tl.to(".reveal-word", {
+                y: "0%",
+                duration: 1.1,
+                stagger: 0.08,
+                ease: "power4.out",
+                delay: 0.15
+            })
+            .to(".cta-container", {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            }, "-=0.7");
+
+            // 2. 3D Mouse Parallax Effect on Hero Cards (Desktop)
+            const parallaxContainer = document.querySelector('.parallax-container');
+            if (parallaxContainer && window.matchMedia("(min-width: 1024px)").matches) {
+                document.addEventListener('mousemove', (e) => {
+                    const xAxis = (window.innerWidth / 2 - e.pageX) / 70;
+                    const yAxis = (window.innerHeight / 2 - e.pageY) / 70;
+
+                    gsap.to(parallaxContainer, {
+                        rotationY: -16 + xAxis,
+                        rotationX: 14 - yAxis,
+                        duration: 1.2,
+                        ease: "power2.out"
+                    });
+                });
+            }
+
+            // 3. One-Click Copy CLI Command
+            const copyBtn = document.getElementById("copy-cli-btn");
+            const copyIcon = document.getElementById("copy-icon");
+            const cliText = document.getElementById("cli-command") ? document.getElementById("cli-command").innerText : "npx autopilot-engine init";
+
+            if (copyBtn) {
+                copyBtn.addEventListener("click", () => {
+                    navigator.clipboard.writeText(cliText).then(() => {
+                        copyIcon.setAttribute("icon", "solar:check-circle-bold");
+                        copyIcon.classList.add("text-emerald-400");
+                        setTimeout(() => {
+                            copyIcon.setAttribute("icon", "solar:copy-linear");
+                            copyIcon.classList.remove("text-emerald-400");
+                        }, 2000);
+                    });
+                });
+            }
+
+            // 4. Interactive Simulator Workflow Scenarios
+            const simTabs = document.querySelectorAll(".sim-tab");
+            const simOutput = document.getElementById("sim-output");
+            const simFilename = document.getElementById("sim-filename");
+            const rerunBtn = document.getElementById("rerun-sim-btn");
+
+            const scenarios = {
+                "pr-review": {
+                    filename: "autopilot-daemon :: workflow-orchestrator.ts",
+                    logs: [
+                        { text: "[00:01:14 UTC] Trigger: Pull Request #482 opened on branch 'feat/cache-invalidation'", cls: "text-gray-500" },
+                        { text: "[Autopilot] Scanning git graph & symbol dependency tree (1,480 files indexed)...", cls: "text-indigo-400" },
+                        { box: true, title: "⚠ Warning detected in src/lib/redis.ts:", desc: "Line 48: Connection pool leak identified on unhandled ECONNRESET event.", diff: "+ Applying zero-allocation reconnect handler with exponential backoff..." },
+                        { text: "[Autopilot] Running sandbox unit suite (48 tests)...", cls: "text-cyan-400" },
+                        { text: "✔ Verification PASSED: All 48 test assertions succeeded in 1.4s.", cls: "text-emerald-400" },
+                        { text: '✔ [Commit auto-authored] "fix(redis): patch connection pool leak on reset" pushed to PR #482', cls: "text-white font-semibold pt-2 border-t border-white/5" }
+                    ]
+                },
+                "ci-heal": {
+                    filename: "autopilot-ci :: flaky-healer-agent.ts",
+                    logs: [
+                        { text: "[00:04:22 UTC] GitHub Actions Event: Workflow 'test-integration' failed on commit 4f98ba", cls: "text-red-400" },
+                        { text: "[Autopilot] Ingesting stack trace & container memory logs...", cls: "text-indigo-400" },
+                        { box: true, title: "🔍 Root cause identified: Race condition in test/auth_session.spec.ts", desc: "Async database fixture tore down before token expiration assertion finished.", diff: "+ await db.syncPendingTransactions(); await waitForSessionState('revoked');" },
+                        { text: "[Autopilot] Re-running quarantined test suite in microVM...", cls: "text-cyan-400" },
+                        { text: "✔ 10/10 iterations passed without timing variance.", cls: "text-emerald-400" },
+                        { text: '✔ CI Pipeline Green: PR #489 auto-annotated with self-healing report.', cls: "text-white font-semibold pt-2 border-t border-white/5" }
+                    ]
+                },
+                "canary-rollback": {
+                    filename: "autopilot-sre :: incident-mitigation.ts",
+                    logs: [
+                        { text: "[00:09:05 UTC] Datadog Webhook: Alert 'HTTP 502 rate > 1.2%' fired on us-east-1 pod fleet", cls: "text-red-400 font-semibold" },
+                        { text: "[Autopilot] Correlating incident with recent deployments (Canary release v2.4.1 deployed 4m ago)...", cls: "text-amber-400" },
+                        { box: true, title: "🚨 Anomaly isolated to commit e810a9 (Database migration)", desc: "Lock wait timeout exceeded on 'users_v2' table.", diff: "+ Executing zero-downtime rollback to v2.4.0 in Kubernetes cluster..." },
+                        { text: "[Autopilot] Canary traffic shifted 100% back to stable cluster...", cls: "text-cyan-400" },
+                        { text: "✔ 502 Error rate dropped to 0.00% in 18 seconds.", cls: "text-emerald-400" },
+                        { text: '✔ Post-mortem draft generated and posted to Slack #incidents-prod', cls: "text-white font-semibold pt-2 border-t border-white/5" }
+                    ]
+                }
+            };
+
+            let currentScenario = "pr-review";
+
+            function renderScenario(key) {
+                currentScenario = key;
+                const data = scenarios[key];
+                simFilename.textContent = data.filename;
+                simOutput.innerHTML = "";
+
+                data.logs.forEach((item, index) => {
+                    setTimeout(() => {
+                        const div = document.createElement("div");
+                        if (item.box) {
+                            div.className = "p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-1.5 text-gray-300";
+                            div.innerHTML = `
+                                <div class="text-amber-400 font-semibold">${item.title}</div>
+                                <div class="text-gray-400">${item.desc}</div>
+                                <div class="text-emerald-400">${item.diff}</div>
+                            `;
+                        } else {
+                            div.className = item.cls;
+                            div.textContent = item.text;
+                        }
+                        simOutput.appendChild(div);
+                        simOutput.scrollTop = simOutput.scrollHeight;
+                    }, index * 200);
+                });
+            }
+
+            simTabs.forEach(tab => {
+                tab.addEventListener("click", () => {
+                    simTabs.forEach(t => {
+                        t.classList.remove("active", "bg-white", "text-black", "shadow-md");
+                        t.classList.add("text-gray-400");
+                    });
+                    tab.classList.add("active", "bg-white", "text-black", "shadow-md");
+                    tab.classList.remove("text-gray-400");
+                    renderScenario(tab.dataset.target);
+                });
+            });
+
+            if (rerunBtn) {
+                rerunBtn.addEventListener("click", () => renderScenario(currentScenario));
+            }
+
+            // 5. FAQ Accordion Interaction
+            const faqToggles = document.querySelectorAll(".faq-toggle");
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener("click", () => {
+                    const expanded = toggle.getAttribute("aria-expanded") === "true";
+                    const answer = toggle.nextElementSibling;
+                    const icon = toggle.querySelector(".faq-icon");
+
+                    // Close all others
+                    faqToggles.forEach(other => {
+                        if (other !== toggle) {
+                            other.setAttribute("aria-expanded", "false");
+                            other.nextElementSibling.classList.add("hidden");
+                            const otherIcon = other.querySelector(".faq-icon");
+                            if (otherIcon) otherIcon.style.transform = "rotate(0deg)";
+                        }
+                    });
+
+                    // Toggle current
+                    toggle.setAttribute("aria-expanded", !expanded);
+                    if (!expanded) {
+                        answer.classList.remove("hidden");
+                        if (icon) icon.style.transform = "rotate(180deg)";
+                    } else {
+                        answer.classList.add("hidden");
+                        if (icon) icon.style.transform = "rotate(0deg)";
+                    }
+                });
+            });
+
+            // 6. Mobile Drawer Toggle
+            const mobileBtn = document.getElementById("mobile-menu-btn");
+            const mobileDrawer = document.getElementById("mobile-drawer");
+            if (mobileBtn && mobileDrawer) {
+                mobileBtn.addEventListener("click", () => {
+                    mobileDrawer.classList.toggle("hidden");
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html><html lang="pl"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Framework — przegląd</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;family=Playfair+Display:ital,wght@1,400&amp;display=swap" rel="stylesheet">
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.-z-10{z-index:-10}.z-10{z-index:10}.mx-auto{margin-left:auto;margin-right:auto}.mb-8{margin-bottom:2rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mt-24{margin-top:6rem}.mt-4{margin-top:1rem}.flex{display:flex}.grid{display:grid}.h-full{height:100%}.h-64{height:16rem}.min-h-screen{min-height:100vh}.w-full{width:100%}.max-w-6xl{max-width:72rem}.max-w-2xl{max-width:42rem}.flex-grow{flex-grow:1}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}@keyframes spin{to{transform:rotate(360deg)}}.animate-\[spin_10s_linear_infinite\]{animation:spin 10s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.animate-\[spin_12s_linear_infinite_reverse\]{animation:spin 12s linear infinite reverse}@keyframes spin{to{transform:rotate(360deg)}}.animate-\[spin_15s_linear_infinite_reverse\]{animation:spin 15s linear infinite reverse}@keyframes spin{to{transform:rotate(360deg)}}.animate-\[spin_4s_linear_infinite\]{animation:spin 4s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.animate-\[spin_8s_linear_infinite\]{animation:spin 8s linear infinite}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.gap-2{gap:0.5rem}.gap-6{gap:1.5rem}.overflow-hidden{overflow:hidden}.overflow-x-hidden{overflow-x:hidden}.rounded-full{border-radius:9999px}.rounded-3xl{border-radius:1.5rem}.rounded-\[23px\]{border-radius:23px}.border-b{border-bottom-width:1px}.border-white\/5{border-color:rgb(255 255 255 / 0.05)}.bg-neutral-950{--tw-bg-opacity:1;background-color:rgb(10 10 10 / var(--tw-bg-opacity, 1))}.bg-neutral-950\/80{background-color:rgb(10 10 10 / 0.8)}.bg-neutral-900\/20{background-color:rgb(23 23 23 / 0.2)}.bg-gradient-to-b{background-image:linear-gradient(to bottom, var(--tw-gradient-stops))}.from-white\/20{--tw-gradient-from:rgb(255 255 255 / 0.2) var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-white\/15{--tw-gradient-from:rgb(255 255 255 / 0.15) var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-white\/\[0\.02\]{--tw-gradient-from:rgb(255 255 255 / 0.02) var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-white\/5{--tw-gradient-to:rgb(255 255 255 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), rgb(255 255 255 / 0.05) var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-white\/0{--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.p-\[1px\]{padding:1px}.p-8{padding:2rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.pb-24{padding-bottom:6rem}.pt-32{padding-top:8rem}.text-center{text-align:center}.font-\[\'Inter\'\2c sans-serif\]{font-family:'Inter',sans-serif}.font-\[\'Playfair_Display\'\2c serif\]{font-family:'Playfair Display',serif}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-5xl{font-size:3rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-light{font-weight:300}.font-medium{font-weight:500}.font-normal{font-weight:400}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-0.025em}.tracking-wide{letter-spacing:0.025em}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-neutral-300{--tw-text-opacity:1;color:rgb(212 212 212 / var(--tw-text-opacity, 1))}.text-neutral-400{--tw-text-opacity:1;color:rgb(163 163 163 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-0{opacity:0}.shadow-\[0_0_20px_rgba\(255\2c 255\2c 255\2c 0\.05\)\]{--tw-shadow:0 0 20px rgba(255,255,255,0.05);--tw-shadow-colored:0 0 20px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-500{transition-duration:500ms}.selection\:bg-white\/20 *::selection{background-color:rgb(255 255 255 / 0.2)}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.selection\:bg-white\/20::selection{background-color:rgb(255 255 255 / 0.2)}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:from-white\/25:hover{--tw-gradient-from:rgb(255 255 255 / 0.25) var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width: 768px){.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:text-7xl{font-size:4.5rem;line-height:1}.md\:text-base{font-size:1rem;line-height:1.5rem}}</style></head>
+<style>
+  :root{--signal:#e5e5e5;--line:rgba(255,255,255,.12);--quiet:#a3a3a3}
+  html{scroll-behavior:smooth}body{background:#0a0a0a}
+  a:focus-visible{outline:2px solid #fff;outline-offset:5px;border-radius:4px}
+  #bg-canvas{opacity:.82;transition:opacity .6s ease}
+  .system-step{position:relative;transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .35s ease}.system-step:focus-within,.system-step:hover{transform:translateY(-4px)}
+  .step-number{font:10px 'Inter',sans-serif;letter-spacing:.18em;color:#a3a3a3;display:block;margin-bottom:14px}
+  .hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}.hero-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;border:1px solid var(--line);font-size:12px;letter-spacing:.08em;text-transform:uppercase;transition:background .2s ease,color .2s ease,border-color .2s ease}.hero-actions a:first-child{background:#fff;color:#0a0a0a;border-color:#fff}.hero-actions a:hover{background:#fff;color:#0a0a0a;border-color:#fff}
+  .architecture{width:100%;margin-top:96px;padding:40px 0 0;border-top:1px solid var(--line)}.architecture-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:30px}.architecture-heading p{max-width:38ch;color:var(--quiet);font-size:14px;line-height:1.6}.architecture-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line)}.architecture-layer{min-height:180px;padding:22px;border-right:1px solid var(--line);background:rgba(255,255,255,.015)}.architecture-layer:last-child{border-right:0}.architecture-layer span{display:block;color:#a3a3a3;font-size:10px;letter-spacing:.16em;margin-bottom:32px}.architecture-layer h3{font-size:17px;font-weight:400;margin:0 0 12px}.architecture-layer p{color:#a3a3a3;font-size:13px;line-height:1.55;margin:0}
+  @media(max-width:767px){main{padding-top:6rem!important}.hero-actions{margin-top:22px}.hero-actions a{width:100%}.architecture{margin-top:56px}.architecture-heading{display:block}.architecture-heading p{margin-top:14px}.architecture-grid{grid-template-columns:1fr 1fr}.architecture-layer{min-height:150px;border-bottom:1px solid var(--line)}.architecture-layer:nth-child(2){border-right:0}.architecture-layer:nth-last-child(-n+2){border-bottom:0}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}#bg-canvas{display:none}.system-step,.system-step:hover{transform:none!important}.animate-pulse,[class*="animate-"]{animation:none!important}}
+</style>
+<body class="bg-neutral-950 text-white font-['Inter',sans-serif] min-h-screen relative overflow-x-hidden selection:bg-white/20 selection:text-white antialiased">
+
+    <!-- WebGL Plasma Background (Replacing Grid/Glow) -->
+    <canvas id="bg-canvas" class="fixed inset-0 w-full h-full -z-10 pointer-events-none" width="1440" height="900"></canvas>
+
+    <!-- Main Container -->
+    <main class="relative z-10 w-full max-w-6xl mx-auto px-6 pt-32 pb-24 flex flex-col items-center">
+
+        <!-- Hero Badge -->
+        <div class="p-[1px] rounded-full bg-gradient-to-b from-white/20 to-white/0 mb-8 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+            <div class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-neutral-950/80 backdrop-blur-md">
+                <iconify-icon icon="solar:server-square-linear" class="text-white text-sm animate-pulse"></iconify-icon>
+                <span class="text-xs font-normal tracking-wide text-neutral-300 uppercase">Core Framework</span>
+            </div>
+        </div>
+
+        <!-- Hero Typography -->
+        <h1 class="text-center text-5xl md:text-7xl leading-tight font-normal tracking-tight text-white mb-4">
+            Fundament zaprojektowany <br>
+            <span class="font-['Playfair_Display',serif] italic text-neutral-400">— dla swobodnego wzrostu.</span>
+        </h1>
+
+        <p class="mt-4 text-sm md:text-base text-neutral-400 max-w-2xl text-center leading-relaxed font-light">
+            Niezawodny rdzeń aplikacji: zsynchronizowany stan, bezpieczeństwo uwzględniające uprawnienia i infrastruktura, która rośnie wraz z rzeczywistym zapotrzebowaniem.
+        </p>
+        <div class="hero-actions" aria-label="Działania Core Framework">
+            <a href="#architecture">Poznaj architekturę</a>
+            <a href="mailto:hello@barth.studio?subject=Core%20Framework%20—%20zapytanie">Omów zastosowanie</a>
+        </div>
+
+        <!-- Feature Cards Grid -->
+        <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 mt-24">
+
+            <!-- Card 1: State Sync -->
+            <div class="system-step group relative rounded-3xl p-[1px] bg-gradient-to-b from-white/15 via-white/5 to-transparent h-full flex flex-col transition-all duration-500 hover:from-white/25">
+                <div class="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none"></div>
+
+                <div class="relative bg-neutral-950 rounded-[23px] h-full flex flex-col overflow-hidden">
+                    <!-- Animated Visual -->
+                    <div class="h-64 w-full relative flex items-center justify-center border-b border-white/5 bg-neutral-900/20">
+                        <svg class="w-full h-full" viewBox="0 0 300 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g transform="translate(150, 120)">
+                                <!-- Central Node Core -->
+                                <circle cx="0" cy="0" r="24" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)"></circle>
+                                <circle cx="0" cy="0" r="12" fill="rgba(255,255,255,0.8)" class="animate-pulse" style="animation-duration: 2s;"></circle>
+
+                                <!-- Connecting Lines & Data Packets -->
+                                <!-- Line Top Right -->
+                                <line x1="10" y1="-10" x2="60" y2="-60" stroke="rgba(255,255,255,0.1)" stroke-width="1"></line>
+                                <circle r="2" fill="white">
+                                    <animateMotion dur="1.5s" repeatCount="indefinite" path="M 10 -10 L 60 -60"></animateMotion>
+                                    <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"></animate>
+                                </circle>
+                                <circle cx="60" cy="-60" r="6" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)"></circle>
+
+                                <!-- Line Right -->
+                                <line x1="14" y1="0" x2="80" y2="20" stroke="rgba(255,255,255,0.1)" stroke-width="1"></line>
+                                <circle r="2" fill="white">
+                                    <animateMotion dur="2s" repeatCount="indefinite" path="M 14 0 L 80 20" begin="0.5s"></animateMotion>
+                                    <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="0.5s"></animate>
+                                </circle>
+                                <circle cx="80" cy="20" r="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.2)"></circle>
+
+                                <!-- Line Bottom Left -->
+                                <line x1="-10" y1="10" x2="-50" y2="50" stroke="rgba(255,255,255,0.1)" stroke-width="1"></line>
+                                <circle r="2" fill="white">
+                                    <animateMotion dur="1.2s" repeatCount="indefinite" path="M -10 10 L -50 50" begin="0.2s"></animateMotion>
+                                    <animate attributeName="opacity" values="0;1;0" dur="1.2s" repeatCount="indefinite" begin="0.2s"></animate>
+                                </circle>
+                                <circle cx="-50" cy="50" r="5" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.4)"></circle>
+
+                                <!-- Line Top Left -->
+                                <line x1="-12" y1="-5" x2="-70" y2="-20" stroke="rgba(255,255,255,0.1)" stroke-width="1"></line>
+                                <circle r="2" fill="white">
+                                    <animateMotion dur="2.5s" repeatCount="indefinite" path="M -12 -5 L -70 -20" begin="1s"></animateMotion>
+                                    <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" begin="1s"></animate>
+                                </circle>
+                                <circle cx="-70" cy="-20" r="7" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.2)"></circle>
+
+                                <!-- Orbital Rings -->
+                                <g style="transform-origin: 0 0;" class="animate-[spin_10s_linear_infinite]">
+                                    <ellipse cx="0" cy="0" rx="45" ry="45" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="4 12"></ellipse>
+                                </g>
+                                <g style="transform-origin: 0 0;" class="animate-[spin_15s_linear_infinite_reverse]">
+                                    <ellipse cx="0" cy="0" rx="65" ry="65" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="20 40"></ellipse>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="p-8 relative z-10 flex flex-col flex-grow">
+                        <span class="step-number">01 / SYNCHRONIZUJ</span>
+                        <h3 class="text-lg font-medium tracking-tight text-white mb-2">Natychmiastowa synchronizacja stanu</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed font-light">
+                            Jedna zmiana trafia do połączonych modułów, dzięki czemu cały zespół pracuje na aktualnych danych bez ręcznego odświeżania.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Security -->
+            <div class="system-step group relative rounded-3xl p-[1px] bg-gradient-to-b from-white/15 via-white/5 to-transparent h-full flex flex-col transition-all duration-500 hover:from-white/25">
+                <div class="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none"></div>
+
+                <div class="relative bg-neutral-950 rounded-[23px] h-full flex flex-col overflow-hidden">
+                    <div class="h-64 w-full relative flex items-center justify-center border-b border-white/5 bg-neutral-900/20">
+                        <svg class="w-full h-full" viewBox="0 0 300 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g transform="translate(150, 120)">
+                                <!-- Outer Rotating Shield Rings -->
+                                <g style="transform-origin: 0 0;" class="animate-[spin_8s_linear_infinite]">
+                                    <circle cx="0" cy="0" r="50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="30 10"></circle>
+                                    <circle cx="0" cy="-50" r="2" fill="rgba(255,255,255,0.5)"></circle>
+                                </g>
+                                <g style="transform-origin: 0 0;" class="animate-[spin_12s_linear_infinite_reverse]">
+                                    <circle cx="0" cy="0" r="60" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="10 20"></circle>
+                                </g>
+
+                                <!-- Central Core / Vault -->
+                                <path d="M-20,-20 L20,-20 L30,0 L20,20 L-20,20 L-30,0 Z" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.2)" stroke-width="1"></path>
+                                <path d="M-15,-15 L15,-15 L22,0 L15,15 L-15,15 L-22,0 Z" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.3)" stroke-width="1" class="animate-pulse" style="animation-duration: 3s;"></path>
+
+                                <!-- Core Lock Element -->
+                                <circle cx="0" cy="0" r="6" fill="white"></circle>
+                                <circle cx="0" cy="0" r="12" fill="none" stroke="white" stroke-width="1" stroke-dasharray="2 2" class="animate-[spin_4s_linear_infinite]"></circle>
+
+                                <!-- Animated Scanning Line -->
+                                <line x1="-40" y1="0" x2="40" y2="0" stroke="rgba(255,255,255,0.4)" stroke-width="1">
+                                    <animate attributeName="y1" values="-30;30;-30" dur="4s" repeatCount="indefinite" ease="linear"></animate>
+                                    <animate attributeName="y2" values="-30;30;-30" dur="4s" repeatCount="indefinite" ease="linear"></animate>
+                                    <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" ease="linear"></animate>
+                                </line>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="p-8 relative z-10 flex flex-col flex-grow">
+                        <span class="step-number">02 / CHROŃ</span>
+                        <h3 class="text-lg font-medium tracking-tight text-white mb-2">Bezpieczeństwo wbudowane w rdzeń</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed font-light">
+                            Uprawnienia i szyfrowanie są częścią rdzenia, dlatego zasady dostępu pozostają spójne w każdym module i integracji.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Scale -->
+            <div class="system-step group relative rounded-3xl p-[1px] bg-gradient-to-b from-white/15 via-white/5 to-transparent h-full flex flex-col transition-all duration-500 hover:from-white/25">
+                <div class="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none"></div>
+
+                <div class="relative bg-neutral-950 rounded-[23px] h-full flex flex-col overflow-hidden">
+                    <div class="h-64 w-full relative flex items-center justify-center border-b border-white/5 bg-neutral-900/20">
+                        <svg class="w-full h-full" viewBox="0 0 300 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g transform="translate(150, 130)">
+                                <!-- Infrastructure Layers / Isometric Planes -->
+
+                                <!-- Bottom Layer -->
+                                <g>
+                                    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-5; 0,0" dur="4s" repeatCount="indefinite" begin="0s"></animateTransform>
+                                    <path d="M 0 10 L 60 -20 L 0 -50 L -60 -20 Z" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.1)" stroke-width="1"></path>
+                                    <!-- Base structural lines -->
+                                    <path d="M -60 -20 L -60 -10 L 0 20 L 60 -10 L 60 -20" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"></path>
+                                </g>
+
+                                <!-- Middle Layer -->
+                                <g>
+                                    <animateTransform attributeName="transform" type="translate" values="0,-30; 0,-40; 0,-30" dur="4s" repeatCount="indefinite" begin="1s"></animateTransform>
+                                    <path d="M 0 10 L 50 -15 L 0 -40 L -50 -15 Z" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.2)" stroke-width="1"></path>
+                                    <circle cx="0" cy="-15" r="3" fill="rgba(255,255,255,0.3)" class="animate-pulse" style="animation-duration: 2s;"></circle>
+                                </g>
+
+                                <!-- Top Layer -->
+                                <g>
+                                    <animateTransform attributeName="transform" type="translate" values="0,-60; 0,-75; 0,-60" dur="4s" repeatCount="indefinite" begin="2s"></animateTransform>
+                                    <path d="M 0 10 L 40 -10 L 0 -30 L -40 -10 Z" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"></path>
+
+                                    <!-- Top active nodes -->
+                                    <circle cx="0" cy="-10" r="4" fill="white" class="animate-pulse" style="animation-duration: 1.5s;"></circle>
+                                    <circle cx="-20" cy="-10" r="2" fill="rgba(255,255,255,0.5)"></circle>
+                                    <circle cx="20" cy="-10" r="2" fill="rgba(255,255,255,0.5)"></circle>
+                                </g>
+
+                                <!-- Vertical Connection Beams -->
+                                <line x1="0" y1="-100" x2="0" y2="10" stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="2 2"></line>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="p-8 relative z-10 flex flex-col flex-grow">
+                        <span class="step-number">03 / ROZWIJAJ</span>
+                        <h3 class="text-lg font-medium tracking-tight text-white mb-2">Elastyczna infrastruktura</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed font-light">
+                            Zacznij od precyzyjnego wdrożenia, a potem dodawaj zasoby i regiony wtedy, gdy potwierdza to rzeczywiste użycie.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <section id="architecture" class="architecture" aria-labelledby="architecture-title">
+            <div class="architecture-heading">
+                <div>
+                    <p class="text-xs uppercase tracking-wide text-neutral-400 mb-2">Mapa systemu</p>
+                    <h2 id="architecture-title" class="text-5xl font-normal tracking-tight">Jak łączy się cały rdzeń.</h2>
+                </div>
+                <p>Każda warstwa ma własną odpowiedzialność. Razem ograniczają przekazywanie pracy między zespołami i wyjątki, które utrudniają rozwój produktu.</p>
+            </div>
+            <div class="architecture-grid">
+                <article class="architecture-layer"><span>01 / DOŚWIADCZENIE</span><h3>Interfejs</h3><p>Komponenty i interakcje sprawiają, że system jest zrozumiały dla ludzi.</p></article>
+                <article class="architecture-layer"><span>02 / DOMENA</span><h3>Zasady</h3><p>Wspólne modele utrzymują spójność stanów, uprawnień i decyzji.</p></article>
+                <article class="architecture-layer"><span>03 / POŁĄCZENIA</span><h3>Integracje</h3><p>Usługi wymieniają dane przez niezawodne i obserwowalne granice.</p></article>
+                <article class="architecture-layer"><span>04 / FUNDAMENT</span><h3>Infrastruktura</h3><p>Zasoby, wdrożenia i odporność regionalna podążają za rzeczywistym zapotrzebowaniem.</p></article>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const canvas = document.getElementById('bg-canvas');
+        const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+
+        const vsSource = `
+            attribute vec2 a_position;
+            void main() {
+                gl_Position = vec4(a_position, 0.0, 1.0);
+            }
+        `;
+
+        const fsSource = `
+            #ifdef GL_ES
+            precision highp float;
+            #endif
+
+            uniform float u_time;
+            uniform vec2 u_resolution;
+
+            // FBM Noise generation
+            float random(in vec2 st) {
+                return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123);
+            }
+
+            float noise(in vec2 st) {
+                vec2 i = floor(st);
+                vec2 f = fract(st);
+                float a = random(i);
+                float b = random(i + vec2(1.0, 0.0));
+                float c = random(i + vec2(0.0, 1.0));
+                float d = random(i + vec2(1.0, 1.0));
+                vec2 u = f * f * (3.0 - 2.0 * f);
+                return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
+            }
+
+            float fbm(in vec2 st) {
+                float v = 0.0;
+                float a = 0.5;
+                vec2 shift = vec2(100.0);
+                mat2 rot = mat2(cos(0.5), sin(0.5), -sin(0.5), cos(0.50));
+                for (int i = 0; i < 5; ++i) {
+                    v += a * noise(st);
+                    st = rot * st * 2.0 + shift;
+                    a *= 0.5;
+                }
+                return v;
+            }
+
+            void main() {
+                vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+                vec2 centered = uv * 2.0 - 1.0;
+                centered.x *= u_resolution.x / u_resolution.y;
+
+                float t = u_time * 0.15;
+
+                // Time-shifted warp noise
+                vec2 warp = vec2(uv.x * 2.0, uv.y * 3.0 - t * 0.5);
+                float n = fbm(warp);
+
+                // Sinuous vertical light structure combining sine wave and noise
+                float wave = sin(centered.y * 1.5 + t * 5.0) * 0.3 + (n - 0.5) * 0.5;
+
+                // High-intensity glow contours via reciprocal distance
+                float dist = abs(centered.x - wave);
+                float edge = pow(0.008 / (dist + 0.01), 1.4);
+
+                // Dynamic color transition based on vertical coords and noise
+                vec3 colBlue = vec3(0.23, 0.51, 0.96);   // #3B82F6
+                vec3 colPurple = vec3(0.66, 0.33, 0.97); // #A855F7
+                vec3 colRed = vec3(0.94, 0.27, 0.27);    // #EF4444
+
+                float colorMix1 = smoothstep(0.0, 1.0, uv.y + n * 0.4);
+                float colorMix2 = sin(u_time * 0.3 + uv.y * 3.14 + n) * 0.5 + 0.5;
+
+                vec3 baseColor = mix(colBlue, colPurple, colorMix1);
+                baseColor = mix(baseColor, colRed, colorMix2 * 0.5);
+
+                // Surface material and primary glow calculation
+                vec3 finalColor = baseColor * edge;
+
+                // Faint background wash synced with membrane
+                finalColor += baseColor * n * 0.08 * (sin(u_time * 1.5) * 0.5 + 0.8);
+
+                // Subtle screen-space vignette
+                float vignette = 1.0 - smoothstep(0.4, 1.8, length(centered));
+                finalColor *= vignette;
+
+                gl_FragColor = vec4(finalColor, 1.0);
+            }
+        `;
+
+        function createShader(gl, type, source) {
+            const shader = gl.createShader(type);
+            gl.shaderSource(shader, source);
+            gl.compileShader(shader);
+            return shader;
+        }
+
+        const vertexShader = createShader(gl, gl.VERTEX_SHADER, vsSource);
+        const fragmentShader = createShader(gl, gl.FRAGMENT_SHADER, fsSource);
+
+        const program = gl.createProgram();
+        gl.attachShader(program, vertexShader);
+        gl.attachShader(program, fragmentShader);
+        gl.linkProgram(program);
+        gl.useProgram(program);
+
+        const vertices = new Float32Array([
+            -1.0, -1.0,  1.0, -1.0,
+            -1.0,  1.0,  1.0, -1.0,
+             1.0,  1.0, -1.0,  1.0
+        ]);
+
+        const positionBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+        gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+
+        const positionLocation = gl.getAttribLocation(program, "a_position");
+        gl.enableVertexAttribArray(positionLocation);
+        gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+
+        const timeLocation = gl.getUniformLocation(program, "u_time");
+        const resolutionLocation = gl.getUniformLocation(program, "u_resolution");
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            gl.viewport(0, 0, canvas.width, canvas.height);
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function render(time) {
+            gl.uniform1f(timeLocation, time * 0.001);
+            gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
+            gl.drawArrays(gl.TRIANGLES, 0, 6);
+            if (!prefersReducedMotion.matches) requestAnimationFrame(render);
+        }
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        function updateCanvasPresence() {
+            const progress = Math.min(window.scrollY / Math.max(window.innerHeight, 1), 1);
+            canvas.style.opacity = prefersReducedMotion.matches ? '0' : String(0.82 - progress * 0.68);
+        }
+        window.addEventListener('scroll', updateCanvasPresence, { passive: true });
+        prefersReducedMotion.addEventListener('change', updateCanvasPresence);
+        updateCanvasPresence();
+        if (!prefersReducedMotion.matches) requestAnimationFrame(render);
+    </script>
+
+</body></html>

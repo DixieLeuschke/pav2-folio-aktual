@@ -1,0 +1,4 @@
+/* Neutral embed support; project typography, navigation and palettes stay intact. */
+html.is-embed { overscroll-behavior: contain; }
+html.is-embed body { min-width: 0; margin: 0; }
+html.is-embed img, html.is-embed video, html.is-embed canvas { max-width: 100%; }

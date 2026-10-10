@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Złoto na ciemnym tle</title>
+    <link rel="stylesheet" href="/work/embed.css" />
+    <style>
+      :root {
+        --canvas: #0f0f11;
+        --elevated: #171719;
+        --gold: #c9a227;
+        --text: #f6f2e8;
+        --muted: #8a8480;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: system-ui, sans-serif;
+        background: var(--canvas);
+        color: var(--text);
+      }
+
+      .wrap {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 3rem 2rem 4rem;
+      }
+
+      .eyebrow {
+        font-size: 0.7rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        line-height: 1.15;
+        margin: 0 0 1rem;
+        letter-spacing: -0.02em;
+      }
+
+      .meta {
+        font-size: 0.8rem;
+        color: var(--muted);
+        margin-bottom: 2rem;
+      }
+
+      .swatches {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+        margin-bottom: 2rem;
+      }
+
+      .swatch {
+        height: 4.5rem;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .swatch--gold {
+        background: linear-gradient(145deg, #e8c547, #c9a227);
+      }
+
+      .swatch--muted {
+        background: #202023;
+      }
+
+      .swatch--canvas {
+        background: #0f0f11;
+      }
+
+      p {
+        margin: 0 0 1.1rem;
+        line-height: 1.65;
+        color: #b5afa8;
+        font-size: 0.95rem;
+      }
+
+      ul {
+        margin: 0 0 1.5rem;
+        padding-left: 1.1rem;
+        color: #b5afa8;
+        font-size: 0.92rem;
+        line-height: 1.6;
+      }
+
+      li {
+        margin-bottom: 0.35rem;
+      }
+    </style>
+    <script>
+      if (location.search.includes("embed")) {
+        document.documentElement.classList.add("is-embed");
+      }
+    </script>
+  </head>
+  <body>
+    <article class="wrap">
+      <p class="eyebrow">Blog · Kierunek wizualny</p>
+      <h1>Złoto na ciemnym tle</h1>
+      <p class="meta">2024 · 6 min czytania</p>
+      <div class="swatches" aria-hidden="true">
+        <div class="swatch swatch--canvas"></div>
+        <div class="swatch swatch--muted"></div>
+        <div class="swatch swatch--gold"></div>
+      </div>
+      <p>
+        Złoty akcent na ciemnej bazie buduje prestiż tylko wtedy, gdy jest rzadki i ma konkretną
+        rolę — nie gdy wypełnia połowę interfejsu.
+      </p>
+      <ul>
+        <li>Używaj złota do akcji i hierarchii, nie do dekoracji.</li>
+        <li>Obniż saturację w dużych powierzchniach.</li>
+        <li>Zostaw chłodne szarości dla treści wtórnej.</li>
+      </ul>
+      <p>
+        Dobry test: jeśli po usunięciu złota layout nadal działa, akcent był na właściwym
+        miejscu.
+      </p>
+    </article>
+  </body>
+</html>

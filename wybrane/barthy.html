@@ -1,0 +1,468 @@
+<!DOCTYPE html><html lang="en" class="antialiased scroll-smooth"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BARTHY - High-Impact Creatives</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        /* Custom scrollbar for the kanban area to keep it clean */
+        .kanban-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+        .kanban-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .kanban-scroll::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        .kanban-scroll:hover::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+<link id="all-fonts-link-font-dotgothic16" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DotGothic16&amp;display=swap"><style id="all-fonts-style-font-dotgothic16">.font-dotgothic16 { font-family: 'DotGothic16', sans-serif !important; }</style><link id="all-fonts-link-font-jetbrains-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jetbrains-mono">.font-jetbrains-mono { font-family: 'JetBrains Mono', monospace !important; }</style><style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.-bottom-1{bottom:-0.25rem}.-left-2{left:-0.5rem}.-right-1{right:-0.25rem}.top-1\/3{top:33.333333%}.-left-1{left:-0.25rem}.-right-2{right:-0.5rem}.top-1\/2{top:50%}.left-3{left:0.75rem}.right-2{right:0.5rem}.left-0{left:0px}.top-0{top:0px}.bottom-0{bottom:0px}.z-50{z-index:50}.z-\[-1\]{z-index:-1}.z-10{z-index:10}.z-20{z-index:20}.z-30{z-index:30}.mx-auto{margin-left:auto;margin-right:auto}.mb-10{margin-bottom:2.5rem}.mb-6{margin-bottom:1.5rem}.mt-12{margin-top:3rem}.mb-4{margin-bottom:1rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.ml-1{margin-left:0.25rem}.mb-12{margin-bottom:3rem}.ml-0\.5{margin-left:0.125rem}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-14{height:3.5rem}.h-16{height:4rem}.h-\[600px\]{height:600px}.h-7{height:1.75rem}.h-full{height:100%}.h-6{height:1.5rem}.h-12{height:3rem}.min-h-screen{min-height:100vh}.w-full{width:100%}.w-14{width:3.5rem}.w-16{width:4rem}.w-7{width:1.75rem}.w-\[300px\]{width:300px}.w-6{width:1.5rem}.w-1{width:0.25rem}.max-w-2xl{max-width:42rem}.max-w-4xl{max-width:56rem}.max-w-\[1024px\]{max-width:1024px}.max-w-5xl{max-width:64rem}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.shrink-0{flex-shrink:0}.-translate-y-4{--tw-translate-y:-1rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-x-8{--tw-translate-x:-2rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-y-4{--tw-translate-y:1rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-x-8{--tw-translate-x:2rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-y-12{--tw-translate-y:3rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-y-8{--tw-translate-y:2rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-y-6{--tw-translate-y:1.5rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-x-0{--tw-translate-x:0px;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-y-0{--tw-translate-y:0px;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.cursor-default{cursor:default}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-items-center{justify-items:center}.gap-2\.5{gap:0.625rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.gap-2{gap:0.5rem}.gap-1{gap:0.25rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-1\.5{gap:0.375rem}.gap-x-8{column-gap:2rem}.gap-y-12{row-gap:3rem}.-space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(-0.5rem * var(--tw-space-x-reverse));margin-left:calc(-0.5rem * calc(1 - var(--tw-space-x-reverse)))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.overflow-x-hidden{overflow-x:hidden}.overflow-y-hidden{overflow-y:hidden}.scroll-smooth{scroll-behavior:smooth}.rounded-lg{border-radius:0.5rem}.rounded-full{border-radius:9999px}.rounded-3xl{border-radius:1.5rem}.rounded-md{border-radius:0.375rem}.rounded{border-radius:0.25rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-t{border-top-width:1px}.border-\[\#0B0F19\]{--tw-border-opacity:1;border-color:rgb(11 15 25 / var(--tw-border-opacity, 1))}.border-white\/10{border-color:rgb(255 255 255 / 0.1)}.border-white\/5{border-color:rgb(255 255 255 / 0.05)}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.border-yellow-500\/20{border-color:rgb(234 179 8 / 0.2)}.border-blue-500\/20{border-color:rgb(59 130 246 / 0.2)}.border-purple-500\/20{border-color:rgb(168 85 247 / 0.2)}.border-emerald-500\/20{border-color:rgb(16 185 129 / 0.2)}.border-orange-500\/20{border-color:rgb(249 115 22 / 0.2)}.border-gray-500\/20{border-color:rgb(107 114 128 / 0.2)}.border-gray-600\/20{border-color:rgb(75 85 99 / 0.2)}.bg-\[\#0B0F19\]{--tw-bg-opacity:1;background-color:rgb(11 15 25 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-\[\#2D8CFF\]{--tw-bg-opacity:1;background-color:rgb(45 140 255 / var(--tw-bg-opacity, 1))}.bg-white\/10{background-color:rgb(255 255 255 / 0.1)}.bg-white\/5{background-color:rgb(255 255 255 / 0.05)}.bg-\[\#1C1F26\]{--tw-bg-opacity:1;background-color:rgb(28 31 38 / var(--tw-bg-opacity, 1))}.bg-\[\#22252D\]{--tw-bg-opacity:1;background-color:rgb(34 37 45 / var(--tw-bg-opacity, 1))}.bg-black\/20{background-color:rgb(0 0 0 / 0.2)}.bg-\[\#15171C\]{--tw-bg-opacity:1;background-color:rgb(21 23 28 / var(--tw-bg-opacity, 1))}.bg-blue-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-\[\#262A34\]{--tw-bg-opacity:1;background-color:rgb(38 42 52 / var(--tw-bg-opacity, 1))}.bg-yellow-500\/10{background-color:rgb(234 179 8 / 0.1)}.bg-blue-500\/10{background-color:rgb(59 130 246 / 0.1)}.bg-blue-500\/20{background-color:rgb(59 130 246 / 0.2)}.bg-purple-500\/10{background-color:rgb(168 85 247 / 0.1)}.bg-purple-500\/20{background-color:rgb(168 85 247 / 0.2)}.bg-blue-500{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-emerald-500\/10{background-color:rgb(16 185 129 / 0.1)}.bg-emerald-500\/20{background-color:rgb(16 185 129 / 0.2)}.bg-orange-500\/10{background-color:rgb(249 115 22 / 0.1)}.bg-\[\#262A34\]\/50{background-color:rgb(38 42 52 / 0.5)}.bg-gray-500\/10{background-color:rgb(107 114 128 / 0.1)}.bg-gray-600\/20{background-color:rgb(75 85 99 / 0.2)}.bg-gradient-to-b{background-image:linear-gradient(to bottom, var(--tw-gradient-stops))}.bg-gradient-to-t{background-image:linear-gradient(to top, var(--tw-gradient-stops))}.from-white\/20{--tw-gradient-from:rgb(255 255 255 / 0.2) var(--tw-gradient-from-position);--tw-gradient-to:rgb(255 255 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\[\#1C1F26\]{--tw-gradient-from:#1C1F26 var(--tw-gradient-from-position);--tw-gradient-to:rgb(28 31 38 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-\[\#14161C\]{--tw-gradient-from:#14161C var(--tw-gradient-from-position);--tw-gradient-to:rgb(20 22 28 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-white\/5{--tw-gradient-to:rgb(255 255 255 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), rgb(255 255 255 / 0.05) var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-transparent{--tw-gradient-to:transparent var(--tw-gradient-to-position)}.to-\[\#14161C\]{--tw-gradient-to:#14161C var(--tw-gradient-to-position)}.bg-cover{background-size:cover}.bg-center{background-position:center}.bg-no-repeat{background-repeat:no-repeat}.object-cover{object-fit:cover}.p-1{padding:0.25rem}.p-1\.5{padding:0.375rem}.p-\[1px\]{padding:1px}.p-4{padding:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.pb-12{padding-bottom:3rem}.pb-24{padding-bottom:6rem}.pt-20{padding-top:5rem}.pb-1{padding-bottom:0.25rem}.pb-6{padding-bottom:1.5rem}.pt-8{padding-top:2rem}.pb-8{padding-bottom:2rem}.pl-9{padding-left:2.25rem}.pr-12{padding-right:3rem}.pb-10{padding-bottom:2.5rem}.pr-2{padding-right:0.5rem}.pt-3{padding-top:0.75rem}.pl-2{padding-left:0.5rem}.pb-32{padding-bottom:8rem}.text-center{text-align:center}.align-top{vertical-align:top}.font-sans{font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-5xl{font-size:3rem;line-height:1}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-medium{font-weight:500}.font-semibold{font-weight:600}.font-bold{font-weight:700}.font-light{font-weight:300}.uppercase{text-transform:uppercase}.lowercase{text-transform:lowercase}.leading-\[1\.1\]{line-height:1.1}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.tracking-tight{letter-spacing:-0.025em}.tracking-wide{letter-spacing:0.025em}.tracking-widest{letter-spacing:0.1em}.tracking-\[0\.2em\]{letter-spacing:0.2em}.tracking-tighter{letter-spacing:-0.05em}.text-\[\#0B0F19\]{--tw-text-opacity:1;color:rgb(11 15 25 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-yellow-500{--tw-text-opacity:1;color:rgb(234 179 8 / var(--tw-text-opacity, 1))}.text-blue-400{--tw-text-opacity:1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.text-purple-400{--tw-text-opacity:1;color:rgb(192 132 252 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-orange-400{--tw-text-opacity:1;color:rgb(251 146 60 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-white\/90{color:rgb(255 255 255 / 0.9)}.line-through{-webkit-text-decoration-line:line-through;text-decoration-line:line-through}.decoration-gray-600{-webkit-text-decoration-color:#4b5563;text-decoration-color:#4b5563}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.placeholder-gray-500::placeholder{--tw-placeholder-opacity:1;color:rgb(107 114 128 / var(--tw-placeholder-opacity, 1))}.opacity-0{opacity:0}.opacity-40{opacity:0.4}.opacity-60{opacity:0.6}.opacity-70{opacity:0.7}.opacity-50{opacity:0.5}.opacity-100{opacity:1}.mix-blend-screen{mix-blend-mode:screen}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-\[0_0_20px_rgba\(255\2c 255\2c 255\2c 0\.3\)\]{--tw-shadow:0 0 20px rgba(255,255,255,0.3);--tw-shadow-colored:0 0 20px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-\[0_30px_100px_-20px_rgba\(0\2c 0\2c 0\2c 1\)\]{--tw-shadow:0 30px 100px -20px rgba(0,0,0,1);--tw-shadow-colored:0 30px 100px -20px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-blue-500\/20{--tw-shadow-color:rgb(59 130 246 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-2{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-white\/5{--tw-ring-color:rgb(255 255 255 / 0.05)}.ring-\[\#22252D\]{--tw-ring-opacity:1;--tw-ring-color:rgb(34 37 45 / var(--tw-ring-opacity, 1))}.ring-\[\#262A34\]{--tw-ring-opacity:1;--tw-ring-color:rgb(38 42 52 / var(--tw-ring-opacity, 1))}.ring-blue-500\/30{--tw-ring-color:rgb(59 130 246 / 0.3)}.blur-sm{--tw-blur:blur(4px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.blur-md{--tw-blur:blur(12px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.blur-none{--tw-blur: ;filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.grayscale{--tw-grayscale:grayscale(100%);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-xl{--tw-backdrop-blur:blur(24px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.delay-1000{transition-delay:1000ms}.delay-300{transition-delay:300ms}.delay-500{transition-delay:500ms}.delay-\[1200ms\]{transition-delay:1200ms}.delay-700{transition-delay:700ms}.delay-\[1400ms\]{transition-delay:1400ms}.duration-700{transition-duration:700ms}.duration-1000{transition-duration:1000ms}.ease-out{transition-timing-function:cubic-bezier(0, 0, 0.2, 1)}.selection\:bg-blue-500\/30 *::selection{background-color:rgb(59 130 246 / 0.3)}.selection\:bg-blue-500\/30::selection{background-color:rgb(59 130 246 / 0.3)}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:border-white\/20:hover{border-color:rgb(255 255 255 / 0.2)}.hover\:bg-gray-200:hover{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.hover\:bg-white\/20:hover{background-color:rgb(255 255 255 / 0.2)}.hover\:bg-white\/5:hover{background-color:rgb(255 255 255 / 0.05)}.hover\:bg-blue-500:hover{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:text-gray-300:hover{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.hover\:text-gray-400:hover{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.hover\:opacity-80:hover{opacity:0.8}.hover\:grayscale-0:hover{--tw-grayscale:grayscale(0);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.focus\:border-white\/20:focus{border-color:rgb(255 255 255 / 0.2)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.group:focus-within .group-focus-within\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}@media (min-width: 640px){.sm\:block{display:block}.sm\:flex{display:flex}.sm\:w-56{width:14rem}.sm\:w-auto{width:auto}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}}@media (min-width: 768px){.md\:-left-12{left:-3rem}.md\:-right-10{right:-2.5rem}.md\:flex{display:flex}.md\:h-\[650px\]{height:650px}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:px-10{padding-left:2.5rem;padding-right:2.5rem}.md\:pt-32{padding-top:8rem}.md\:text-6xl{font-size:3.75rem;line-height:1}.md\:text-base{font-size:1rem;line-height:1.5rem}}@media (min-width: 1024px){.lg\:text-7xl{font-size:4.5rem;line-height:1}}</style></head>
+<body class="bg-[#0B0F19] text-white font-sans overflow-x-hidden min-h-screen selection:bg-blue-500/30">
+
+    <!-- Fixed Background System -->
+    <div class="fixed inset-0 z-[-1] bg-[#0B0F19]">
+        <!-- Aura Abstract Background Asset -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-screen" style="background-image:none; overflow:hidden; isolation:isolate"><video src="https://wypspaektjjiccarxrgy.supabase.co/storage/v1/object/public/generated-page-media/302e86e0-80d8-4ba5-82e8-004220675655/2026-05-19/1779181978164-de4c8727-3137-4d53-9127-2b0edc9e8318.mp4" poster="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/a99ea2b7-ad5e-4188-bc7b-afa6b40c71ac_3840w.jpg" data-neuform-generated-video="true" data-neuform-video-preset="loop-in-view" muted="" playsinline="" preload="metadata" loop="" data-neuform-generated-video-bg="true" autoplay="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;z-index:0;max-width:none"></video></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="w-full flex justify-between items-center px-6 md:px-10 py-6 z-50 relative animate-item transition-all duration-700 ease-out opacity-100 translate-y-0 translate-x-0 blur-none">
+        <!-- Logo -->
+        <div class="flex items-center gap-2.5 text-white font-medium text-lg cursor-pointer group">
+            <div class="bg-white text-[#0B0F19] rounded-lg p-1 group-hover:scale-105 transition-transform" aria-hidden="true">
+                <iconify-icon icon="solar:bolt-circle-bold" width="20"></iconify-icon>
+            </div>
+            <span class="tracking-tight font-jetbrains-mono">BARTHY</span>
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-8 text-sm text-gray-400 font-medium">
+            <a href="#" class="hover:text-white transition-colors font-jetbrains-mono">Services</a>
+            <a href="#" class="hover:text-white transition-colors font-jetbrains-mono">Pricing</a>
+            <a href="#" class="hover:text-white transition-colors font-jetbrains-mono">Projects</a>
+            <a href="#" class="hover:text-white transition-colors font-jetbrains-mono">About</a>
+        </nav>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-6">
+            <a href="#" class="text-sm text-gray-300 hover:text-white transition-colors hidden sm:block font-medium font-jetbrains-mono">See reviews</a>
+            <button class="px-5 py-2 rounded-full bg-white/10 border border-white/5 text-white text-sm font-medium hover:bg-white/20 transition-all backdrop-blur-md font-jetbrains-mono">
+                Book a call
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="relative z-10 pt-20 md:pt-32 pb-12 px-4 flex flex-col items-center text-center">
+        <h1 id="hero-title" class="text-5xl md:text-6xl lg:text-7xl tracking-tight text-white mb-6 max-w-4xl mx-auto leading-[1.1] font-dotgothic16 font-medium"><span class="inline-block transition-all duration-700 ease-out opacity-100 translate-y-0 blur-none" style="transition-delay: 0ms;">High-performance</span> <span class="inline-block transition-all duration-700 ease-out opacity-100 translate-y-0 blur-none" style="transition-delay: 80ms;">ad</span> <span class="inline-block transition-all duration-700 ease-out opacity-100 translate-y-0 blur-none" style="transition-delay: 160ms;">creatives</span> <span class="inline-block transition-all duration-700 ease-out opacity-100 translate-y-0 blur-none" style="transition-delay: 240ms;">that</span> <span class="inline-block transition-all duration-700 ease-out opacity-100 translate-y-0 blur-none" style="transition-delay: 320ms;">drive</span> <span class="inline-block transition-all duration-700 ease-out opacity-100 translate-y-0 blur-none" style="transition-delay: 400ms;">growth</span> </h1>
+        <p class="text-sm md:text-base text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed animate-item transition-all duration-700 ease-out delay-300 font-jetbrains-mono opacity-100 translate-y-0 translate-x-0 blur-none">
+            Experience an agency-grade creative partnership focused on producing high-converting static ads and UGC that help ecom brands scale faster.
+        </p>
+        <button class="px-6 py-3 rounded-full bg-white text-black font-semibold text-sm hover:bg-gray-200 hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] animate-item duration-700 ease-out delay-500 font-jetbrains-mono opacity-100 translate-y-0 translate-x-0 blur-none">
+            Book a call
+        </button>
+    </main>
+
+    <!-- Dashboard Mockup Section -->
+    <section class="relative w-full max-w-[1024px] mx-auto mt-12 px-4 sm:px-6 z-20 pb-24">
+
+        <!-- Floating Avatars with app badges -->
+        <!-- Left Avatar -->
+        <div class="absolute -left-2 md:-left-12 top-1/3 z-30 animate-item opacity-0 -translate-x-8 blur-sm transition-all duration-1000 ease-out delay-1000 hidden sm:block">
+            <div class="relative p-1 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl">
+                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4f5668c5-fc4a-44e0-bc5e-a664189d3c31_1600w.jpg" class="w-14 h-14 rounded-full object-cover" alt="Team member">
+                <div class="absolute -bottom-1 -right-1 bg-[#2D8CFF] rounded-full p-1.5 border-2 border-[#0B0F19] flex items-center justify-center">
+                   <iconify-icon icon="solar:videocamera-record-bold" width="12" class="text-white"></iconify-icon>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Avatar -->
+        <div class="absolute -right-2 md:-right-10 top-1/2 z-30 animate-item opacity-0 translate-x-8 blur-sm transition-all duration-1000 ease-out delay-[1200ms] hidden sm:block">
+             <div class="relative p-1 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl">
+                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c92852bb-a510-405a-85ab-ffa0fde136a4_1600w.jpg" class="w-16 h-16 rounded-full object-cover" alt="Team member">
+                <div class="absolute -bottom-1 -left-1 bg-white rounded-full p-1.5 border-2 border-[#0B0F19] flex items-center justify-center">
+                   <iconify-icon icon="solar:hashtag-bold" width="14" class="text-black"></iconify-icon>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Mockup Window (Gradient Border implementation) -->
+        <div class="animate-item opacity-0 translate-y-12 blur-md transition-all duration-1000 ease-out delay-700">
+            <!-- Subtle gradient border wrapper -->
+            <div class="rounded-3xl p-[1px] bg-gradient-to-b from-white/20 via-white/5 to-transparent shadow-[0_30px_100px_-20px_rgba(0,0,0,1)]">
+                <!-- Inner App Container -->
+                <div class="bg-[#1C1F26] rounded-3xl overflow-hidden flex flex-col h-[600px] md:h-[650px] ring-1 ring-white/5">
+
+                    <!-- App Title Bar -->
+                    <div class="flex items-center justify-between px-6 py-4 border-b border-white/5 bg-[#22252D]">
+                        <div class="flex items-center gap-8">
+                            <div class="flex items-center gap-2 text-white font-medium text-sm">
+                                <iconify-icon icon="solar:bolt-circle-bold" width="18" aria-hidden="true"></iconify-icon>
+                                <span class="font-jetbrains-mono">BARTHY</span>
+                            </div>
+                            <!-- Nav Pills -->
+                            <div class="hidden sm:flex items-center gap-1 bg-black/20 rounded-full p-1 border border-white/5">
+                                <button class="px-4 py-1 rounded-full bg-white/10 text-white text-xs font-semibold shadow-sm font-jetbrains-mono">Tasks</button>
+                                <button class="px-4 py-1 rounded-full text-gray-400 hover:text-white hover:bg-white/5 transition-colors text-xs font-medium font-jetbrains-mono">Shared</button>
+                                <button class="px-4 py-1 rounded-full text-gray-400 hover:text-white hover:bg-white/5 transition-colors text-xs font-medium font-jetbrains-mono">Templates</button>
+                            </div>
+                        </div>
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/2f563338-39fa-47ea-9761-658d4f3f84db_1600w.jpg" class="w-7 h-7 rounded-full object-cover ring-2 ring-[#22252D]" alt="Current User">
+                    </div>
+
+                    <!-- Main App Content -->
+                    <div class="flex flex-col h-full overflow-hidden bg-gradient-to-b from-[#1C1F26] to-[#14161C]">
+                        <!-- Toolbar -->
+                        <div class="px-8 pt-8 pb-6">
+                            <div class="flex items-center gap-3 text-white mb-6">
+                                <h2 class="text-2xl tracking-tight font-dotgothic16 font-medium">Tasks</h2>
+                                <span class="px-2 py-0.5 rounded-md border border-white/10 bg-white/5 text-xs text-gray-300 font-medium font-jetbrains-mono">8</span>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                <div class="flex items-center gap-6 text-sm font-medium">
+                                    <button class="text-white border-b-2 border-white pb-1 tracking-wide font-jetbrains-mono">Board</button>
+                                    <button class="text-gray-500 hover:text-gray-300 pb-1 tracking-wide transition-colors font-jetbrains-mono">List</button>
+                                </div>
+                                <div class="flex items-center gap-3 w-full sm:w-auto">
+                                    <!-- Search Input -->
+                                    <div class="relative flex-1 sm:w-56 group">
+                                        <iconify-icon icon="solar:magnifer-linear" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-white transition-colors" width="16"></iconify-icon>
+                                        <input type="text" placeholder="Search" class="w-full bg-[#15171C] border border-white/10 rounded-lg pl-9 pr-12 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-white/20 transition-all shadow-inner">
+                                        <div class="absolute right-2 top-1/2 -translate-y-1/2 flex gap-1 pointer-events-none">
+                                            <span class="px-1.5 py-0.5 rounded bg-white/5 text-xs text-gray-500 border border-white/10 font-mono font-jetbrains-mono">⌘</span>
+                                            <span class="px-1.5 py-0.5 rounded bg-white/5 text-xs text-gray-500 border border-white/10 font-mono font-jetbrains-mono">K</span>
+                                        </div>
+                                    </div>
+                                    <button class="flex-shrink-0 bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors shadow-lg shadow-blue-500/20 font-jetbrains-mono">
+                                        New task
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Kanban Board Area -->
+                        <div class="flex-1 overflow-x-auto overflow-y-hidden px-8 pb-8 flex gap-6 kanban-scroll">
+
+                            <!-- Column: Active Requests -->
+                            <div class="w-[300px] flex-shrink-0 flex flex-col h-full">
+                                <div class="flex items-center justify-between text-gray-300 text-sm font-medium px-1 mb-4">
+                                    <div class="flex items-center gap-2">
+                                        <iconify-icon icon="solar:sun-2-linear" width="16" class="text-gray-400"></iconify-icon>
+                                        <span class="font-jetbrains-mono">Active Requests</span>
+                                    </div>
+                                    <button class="text-gray-500 hover:text-white transition-colors"><iconify-icon icon="solar:menu-dots-bold" width="16"></iconify-icon></button>
+                                </div>
+                                <div class="flex flex-col gap-3 overflow-y-auto kanban-scroll pr-2 pb-10">
+
+                                    <!-- Card 1 -->
+                                    <div class="bg-[#262A34] p-4 rounded-xl border border-white/5 hover:border-white/20 transition-all cursor-pointer group flex flex-col gap-3 shadow-sm">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <h3 class="text-white text-sm leading-snug font-dotgothic16 font-medium">Q4 Holiday Campaign Assets</h3>
+                                            <div class="w-6 h-6 shrink-0 rounded-md bg-yellow-500/10 text-yellow-500 flex items-center justify-center border border-yellow-500/20">
+                                                <iconify-icon icon="solar:star-bold" width="12"></iconify-icon>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-xs text-gray-400 font-medium mt-1">
+                                            <div class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-semibold text-xs border border-blue-500/20 font-jetbrains-mono">H</div>
+                                            <span class="font-jetbrains-mono">Oct 12</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-2 pt-3 border-t border-white/5">
+                                            <span class="px-2 py-1 rounded-md bg-blue-500/10 text-blue-400 text-xs font-medium border border-blue-500/20 font-jetbrains-mono">Product Launch</span>
+                                            <div class="flex items-center gap-1.5 text-gray-500 text-xs font-medium group-hover:text-gray-300 transition-colors">
+                                                <iconify-icon icon="solar:chat-line-linear" width="14"></iconify-icon>
+                                                <span class="font-jetbrains-mono">1</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card 2 -->
+                                    <div class="bg-[#262A34] p-4 rounded-xl border border-white/5 hover:border-white/20 transition-all cursor-pointer group flex flex-col gap-3 shadow-sm">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <h3 class="text-white text-sm leading-snug font-dotgothic16 font-medium">Email Banner Fall Promo</h3>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-xs text-gray-400 font-medium mt-1">
+                                            <div class="flex -space-x-2">
+                                                <div class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center font-semibold text-xs border border-purple-500/20 ring-2 ring-[#262A34] z-10 font-jetbrains-mono">K</div>
+                                                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/77415a2e-dcbc-4748-a29d-fced4821881a_1600w.jpg" class="w-6 h-6 rounded-full object-cover ring-2 ring-[#262A34] z-20" alt="Assignee">
+                                            </div>
+                                            <span class="ml-1 font-jetbrains-mono">Oct 14</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-2 pt-3 border-t border-white/5">
+                                            <span class="px-2 py-1 rounded-md bg-purple-500/10 text-purple-400 text-xs font-medium border border-purple-500/20 font-jetbrains-mono">Marketing</span>
+                                            <div class="flex items-center gap-1.5 text-gray-500 text-xs font-medium group-hover:text-gray-300 transition-colors">
+                                                <iconify-icon icon="solar:chat-line-linear" width="14"></iconify-icon>
+                                                <span class="font-jetbrains-mono">3</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Column: In Progress -->
+                            <div class="w-[300px] flex-shrink-0 flex flex-col h-full">
+                                <div class="flex items-center justify-between text-gray-300 text-sm font-medium px-1 mb-4">
+                                    <div class="flex items-center gap-2">
+                                        <iconify-icon icon="solar:clock-circle-linear" width="16" class="text-gray-400"></iconify-icon>
+                                        <span class="font-jetbrains-mono">In Progress</span>
+                                    </div>
+                                    <button class="text-gray-500 hover:text-white transition-colors"><iconify-icon icon="solar:menu-dots-bold" width="16"></iconify-icon></button>
+                                </div>
+                                <div class="flex flex-col gap-3 overflow-y-auto kanban-scroll pr-2 pb-10">
+
+                                    <!-- Card 3 -->
+                                    <div class="bg-[#262A34] p-4 rounded-xl border border-white/10 ring-1 ring-blue-500/30 hover:border-white/20 transition-all cursor-pointer group flex flex-col gap-3 shadow-md relative overflow-hidden">
+                                        <!-- Active indication gradient -->
+                                        <div class="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
+
+                                        <div class="flex justify-between items-start gap-2 pl-2">
+                                            <h3 class="text-white text-sm leading-snug font-dotgothic16 font-medium">UGC Video Editing Batch 1</h3>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-xs text-gray-400 font-medium mt-1 pl-2">
+                                            <div class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-semibold text-xs border border-emerald-500/20 font-jetbrains-mono">M</div>
+                                            <span class="font-jetbrains-mono">Oct 15</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-2 pt-3 border-t border-white/5 pl-2">
+                                            <span class="px-2 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-xs font-medium border border-emerald-500/20 font-jetbrains-mono">Video Production</span>
+                                            <div class="flex items-center gap-1.5 text-gray-500 text-xs font-medium group-hover:text-gray-300 transition-colors">
+                                                <iconify-icon icon="solar:chat-line-linear" width="14"></iconify-icon>
+                                                <span class="font-jetbrains-mono">8</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card 4 -->
+                                    <div class="bg-[#262A34] p-4 rounded-xl border border-white/5 hover:border-white/20 transition-all cursor-pointer group flex flex-col gap-3 shadow-sm">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <h3 class="text-white text-sm leading-snug font-dotgothic16 font-medium">Social Media Carousel</h3>
+                                            <div class="w-6 h-6 shrink-0 rounded-md bg-white/5 text-gray-300 flex items-center justify-center border border-white/10">
+                                                <iconify-icon icon="solar:gallery-linear" width="14"></iconify-icon>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-xs text-gray-400 font-medium mt-1">
+                                             <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/eca707cc-a5b7-439a-b4fd-247f6106c2e1_1600w.jpg" class="w-6 h-6 rounded-full object-cover" alt="Assignee">
+                                            <span class="font-jetbrains-mono">Oct 18</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-2 pt-3 border-t border-white/5">
+                                            <span class="px-2 py-1 rounded-md bg-orange-500/10 text-orange-400 text-xs font-medium border border-orange-500/20 font-jetbrains-mono">Design</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Column: Done -->
+                            <div class="w-[300px] flex-shrink-0 flex flex-col h-full relative">
+                                <div class="flex items-center justify-between text-gray-400 text-sm font-medium px-1 mb-4">
+                                    <div class="flex items-center gap-2">
+                                        <iconify-icon icon="solar:check-circle-linear" width="16"></iconify-icon>
+                                        <span class="font-jetbrains-mono">Done</span>
+                                    </div>
+                                    <button class="text-gray-600 hover:text-gray-400 transition-colors"><iconify-icon icon="solar:menu-dots-bold" width="16"></iconify-icon></button>
+                                </div>
+
+                                <div class="flex flex-col gap-3 overflow-y-auto kanban-scroll pr-2 pb-10">
+                                    <!-- Card 5 -->
+                                    <div class="bg-[#262A34]/50 p-4 rounded-xl border border-white/5 transition-all cursor-pointer group flex flex-col gap-3 shadow-sm opacity-60 hover:opacity-80">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <h3 class="text-gray-400 text-sm leading-snug line-through decoration-gray-600 font-dotgothic16 font-medium">Rebranding Pitch Deck</h3>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-xs text-gray-500 font-medium mt-1">
+                                            <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4f5668c5-fc4a-44e0-bc5e-a664189d3c31_1600w.jpg" class="w-6 h-6 rounded-full object-cover grayscale opacity-70" alt="Assignee">
+                                            <span class="font-jetbrains-mono">Oct 05</span>
+                                        </div>
+                                        <div class="flex items-center justify-between mt-2 pt-3 border-t border-white/5">
+                                            <span class="px-2 py-1 rounded-md bg-gray-500/10 text-gray-400 text-xs font-medium border border-gray-500/20 font-jetbrains-mono">Strategy</span>
+                                            <div class="flex items-center gap-1.5 text-gray-600 text-xs font-medium">
+                                                <iconify-icon icon="solar:chat-line-linear" width="14"></iconify-icon>
+                                                <span class="font-jetbrains-mono">12</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                     <!-- Card 6 -->
+                                    <div class="bg-[#262A34]/50 p-4 rounded-xl border border-white/5 transition-all cursor-pointer flex flex-col gap-3 shadow-sm opacity-50">
+                                        <div class="flex justify-between items-start gap-2">
+                                            <h3 class="text-gray-500 text-sm leading-snug line-through font-dotgothic16 font-medium">Website UI Update</h3>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-xs text-gray-600 font-medium mt-1">
+                                            <div class="w-6 h-6 rounded-full bg-gray-600/20 text-gray-500 flex items-center justify-center font-semibold text-xs border border-gray-600/20 font-jetbrains-mono">T</div>
+                                            <span class="font-jetbrains-mono">Sep 28</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Fade out gradient for bottom of columns to simulate depth -->
+                                <div class="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-[#14161C] to-transparent pointer-events-none"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Cloud Section -->
+    <section class="relative z-20 w-full max-w-5xl mx-auto px-4 pb-32 text-center animate-item opacity-0 translate-y-8 blur-md transition-all duration-1000 ease-out delay-[1400ms]">
+        <p class="text-sm font-medium text-gray-400 mb-12 tracking-wide font-jetbrains-mono">Trusted by over 250 companies of all sizes</p>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 items-center justify-items-center opacity-70">
+            <!-- Simulated Logos to match reference style closely -->
+            <div class="flex items-center gap-2 text-white/90 font-bold text-xl tracking-tight grayscale hover:grayscale-0 hover:text-white transition-all cursor-default font-jetbrains-mono">
+                <iconify-icon icon="solar:box-minimalistic-bold" width="22"></iconify-icon>
+                PODAB
+            </div>
+            <div class="flex items-center gap-2 text-white/90 font-medium text-xl tracking-widest uppercase grayscale hover:grayscale-0 hover:text-white transition-all cursor-default font-jetbrains-mono">
+                <iconify-icon icon="solar:widget-3-linear" width="24"></iconify-icon>
+                BRICK
+            </div>
+            <div class="flex items-center text-white/90 font-semibold text-2xl lowercase tracking-tighter grayscale hover:grayscale-0 hover:text-white transition-all cursor-default font-jetbrains-mono">
+                chime<span class="text-xs align-top inline-block ml-0.5 font-jetbrains-mono">®</span>
+            </div>
+            <div class="flex items-center text-white/90 font-light text-2xl tracking-[0.2em] grayscale hover:grayscale-0 hover:text-white transition-all cursor-default font-jetbrains-mono">
+                WHOOP
+            </div>
+
+            <!-- Row 2 -->
+             <div class="flex items-center text-white/90 font-semibold text-2xl lowercase tracking-tighter grayscale hover:grayscale-0 hover:text-white transition-all cursor-default font-jetbrains-mono">
+                chime<span class="text-xs align-top inline-block ml-0.5 font-jetbrains-mono">®</span>
+            </div>
+            <div class="flex items-center gap-2 text-white/90 font-bold text-xl tracking-tight grayscale hover:grayscale-0 hover:text-white transition-all cursor-default font-jetbrains-mono">
+                <iconify-icon icon="solar:box-minimalistic-bold" width="22"></iconify-icon>
+                PODAB
+            </div>
+             <div class="flex items-center text-white/90 font-light text-2xl tracking-[0.2em] grayscale hover:grayscale-0 hover:text-white transition-all cursor-default font-jetbrains-mono">
+                WHOOP
+            </div>
+            <div class="flex items-center gap-2 text-white/90 font-medium text-xl tracking-widest uppercase grayscale hover:grayscale-0 hover:text-white transition-all cursor-default font-jetbrains-mono">
+                <iconify-icon icon="solar:widget-3-linear" width="24"></iconify-icon>
+                BRICK
+            </div>
+        </div>
+    </section>
+
+    <!-- Inline script for staggered animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Setup word-by-word animation for the hero title
+            const titleElement = document.getElementById('hero-title');
+            if (titleElement) {
+                const text = titleElement.innerText;
+                titleElement.innerHTML = '';
+                const words = text.split(' ');
+
+                words.forEach((word, index) => {
+                    const span = document.createElement('span');
+                    span.innerText = word;
+                    // Add base animation classes
+                    span.className = 'inline-block opacity-0 translate-y-6 blur-md transition-all duration-700 ease-out';
+                    // Stagger the delay incrementally
+                    span.style.transitionDelay = `${index * 80}ms`;
+                    titleElement.appendChild(span);
+                    // Append an actual text node for spacing to prevent collapsing and retain word wrapping
+                    titleElement.appendChild(document.createTextNode(' '));
+                });
+            }
+
+            // Intersection Observer setup
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+
+                        // Handle standard block elements
+                        if (target.classList.contains('animate-item')) {
+                            // Remove hidden states
+                            target.classList.remove('opacity-0', 'translate-y-4', 'translate-y-8', 'translate-y-12', '-translate-x-8', 'translate-x-8', '-translate-y-4', 'blur-sm', 'blur-md');
+                            // Add visible states
+                            target.classList.add('opacity-100', 'translate-y-0', 'translate-x-0', 'blur-none');
+                            observer.unobserve(target);
+                        }
+
+                        // Handle the title specifically to trigger its children
+                        if (target.id === 'hero-title') {
+                             const spans = target.querySelectorAll('span');
+                             spans.forEach(span => {
+                                 // Force reflow
+                                 void span.offsetWidth;
+                                 span.classList.remove('opacity-0', 'translate-y-6', 'blur-md');
+                                 span.classList.add('opacity-100', 'translate-y-0', 'blur-none');
+                             });
+                             observer.unobserve(target);
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all items needing animation
+            document.querySelectorAll('.animate-item, #hero-title').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+
+<script data-neuform-video-controller="true">
+(function () {
+  function playVideo(video) {
+    var promise = video.play();
+    if (promise && typeof promise.catch === "function") {
+      promise.catch(function () {});
+    }
+  }
+  function setupVideo(video) {
+    if (video.__neuformVideoReady === true) return;
+    video.__neuformVideoReady = true;
+    video.muted = true;
+    video.playsInline = true;
+    var preset = video.dataset.neuformVideoPreset || "loop-in-view";
+    if (preset === "hover") {
+      video.addEventListener("mouseenter", function () { playVideo(video); });
+      video.addEventListener("mouseleave", function () {
+        video.pause();
+        video.currentTime = 0;
+      });
+      return;
+    }
+    if (!("IntersectionObserver" in window)) {
+      playVideo(video);
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          if (preset === "play-once" && video.__neuformVideoPlayed === true) return;
+          playVideo(video);
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.35 });
+    if (preset === "play-once") {
+      video.addEventListener("ended", function () {
+        video.__neuformVideoPlayed = true;
+      }, { once: true });
+    }
+    observer.observe(video);
+  }
+  function setupVideos() {
+    document.querySelectorAll("video[data-neuform-video-preset]").forEach(setupVideo);
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupVideos);
+  } else {
+    setupVideos();
+  }
+})();</script></body></html>

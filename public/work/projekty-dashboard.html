@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROJEKTY · hub</title>
+    <link rel="stylesheet" href="/work/embed.css" />
+    
+    <!-- Google Fonts: Plus Jakarta Sans + Crimson Pro + JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@1,400;1,600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --canvas: #0f0f11;
+        --elevated: #161619;
+        --elevated-hover: #1c1c20;
+        --gold: #c9a227;
+        --gold-muted: rgba(201, 162, 39, 0.14);
+        --text: #f6f2e8;
+        --text-secondary: #c2bcb4;
+        --muted: #8a8480;
+        --border: rgba(255, 255, 255, 0.07);
+        --border-hover: rgba(255, 255, 255, 0.16);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        background: var(--canvas);
+        color: var(--text);
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .wrap {
+        max-width: 58rem;
+        margin: 0 auto;
+        padding: 3.5rem 1.5rem 5rem;
+      }
+
+      /* Header */
+      .header {
+        margin-bottom: 2.5rem;
+      }
+
+      .header-top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 0.5rem;
+      }
+
+      h1 {
+        font-size: 1.85rem;
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        color: var(--text);
+      }
+
+      h1 .serif {
+        font-family: 'Crimson Pro', Georgia, serif;
+        font-weight: 400;
+        font-style: italic;
+        color: var(--gold);
+      }
+
+      .header-desc {
+        color: var(--muted);
+        font-size: 0.92rem;
+        max-width: 32rem;
+        line-height: 1.55;
+      }
+
+      /* Search & Controls */
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .search-wrapper {
+        position: relative;
+        flex: 1;
+        min-width: min(100%, 18rem);
+      }
+
+      .search {
+        width: 100%;
+        padding: 0.65rem 0.95rem;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: var(--elevated);
+        color: var(--text);
+        font-family: inherit;
+        font-size: 0.88rem;
+        outline: none;
+        transition: border-color 0.2s ease;
+      }
+
+      .search:focus {
+        border-color: var(--border-hover);
+      }
+
+      .search::placeholder {
+        color: var(--muted);
+      }
+
+      .meta-count {
+        font-size: 0.82rem;
+        font-family: 'JetBrains Mono', monospace;
+        color: var(--muted);
+      }
+
+      /* Filters */
+      .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-bottom: 2rem;
+      }
+
+      .chip {
+        padding: 0.4rem 0.85rem;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: var(--elevated);
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-family: inherit;
+        cursor: pointer;
+        transition: all 0.15s ease;
+      }
+
+      .chip:hover {
+        color: var(--text);
+        border-color: var(--border-hover);
+      }
+
+      .chip--active {
+        border-color: rgba(201, 162, 39, 0.45);
+        color: var(--text);
+        background: var(--gold-muted);
+      }
+
+      /* Grid of projects */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.15rem;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1.35rem 1.4rem;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: var(--elevated);
+        text-decoration: none;
+        color: inherit;
+        transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      }
+
+      .card:hover {
+        background: var(--elevated-hover);
+        border-color: var(--border-hover);
+        transform: translateY(-2px);
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 0.75rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .card h2 {
+        font-size: 1.05rem;
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        color: var(--text);
+      }
+
+      .arrow {
+        font-size: 0.95rem;
+        color: var(--muted);
+        transition: transform 0.2s ease, color 0.2s ease;
+      }
+
+      .card:hover .arrow {
+        color: var(--gold);
+        transform: translate(2px, -2px);
+      }
+
+      .card p {
+        font-size: 0.86rem;
+        color: var(--text-secondary);
+        line-height: 1.55;
+        margin-bottom: 1.25rem;
+      }
+
+      .card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 0.75rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+        font-size: 0.75rem;
+      }
+
+      .tag {
+        color: var(--muted);
+        font-family: 'JetBrains Mono', monospace;
+      }
+
+      .status {
+        display: inline-block;
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+
+      .status--progress {
+        color: var(--gold);
+      }
+
+      .status--shipped {
+        color: #9cb8a6;
+      }
+
+      .status--archive {
+        color: var(--muted);
+      }
+
+      /* Empty State */
+      .empty {
+        display: none;
+        grid-column: 1 / -1;
+        padding: 3rem 1rem;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      /* Mobile */
+      @media (max-width: 640px) {
+        .wrap {
+          padding: 2.25rem 1.25rem 3.5rem;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      
+      <header class="header">
+        <div class="header-top">
+          <h1>PROJEKTY <span class="serif">· hub</span></h1>
+          <span class="meta-count" id="projectCount">8 pozycji</span>
+        </div>
+        <p class="header-desc">
+          Zestawienie autorskich makiet, interfejsów produktowych i środowisk prototypowych w przestrzeni roboczej.
+        </p>
+      </header>
+
+      <div class="toolbar">
+        <div class="search-wrapper">
+          <input 
+            class="search" 
+            id="searchInput" 
+            type="search" 
+            placeholder="Szukaj projektów…" 
+            aria-label="Szukaj projektów" 
+          />
+        </div>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filtruj według stanu">
+        <button class="chip chip--active" data-filter="all">Wszystkie</button>
+        <button class="chip" data-filter="progress">W toku</button>
+        <button class="chip" data-filter="shipped">Wysłane</button>
+        <button class="chip" data-filter="archive">Archiwum</button>
+      </div>
+
+      <div class="grid" id="projectGrid">
+        
+        <!-- FinLux -->
+        <a href="finlux-home.html" class="card" data-status="progress" data-search="finlux redesign product ui cashflow wealth private banking">
+          <div>
+            <div class="card-header">
+              <h2>FinLux · redesign</h2>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+            <p>Product UI, ekrany cashflow i moduł insight AI z ciemną bazą barwną.</p>
+          </div>
+          <div class="card-footer">
+            <span class="tag">Fintech</span>
+            <span class="status status--progress">W toku</span>
+          </div>
+        </a>
+
+        <!-- NovaFlow -->
+        <a href="how-novaflow-operates.html" class="card" data-status="shipped" data-search="novaflow operates pipeline telemetry blueprint data flow">
+          <div>
+            <div class="card-header">
+              <h2>NovaFlow · operates</h2>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+            <p>Blueprint potoku danych: ingest wielu kanałów, klasteryzacja NLP i dispatch.</p>
+          </div>
+          <div class="card-footer">
+            <span class="tag">AI Engine</span>
+            <span class="status status--shipped">Wysłane</span>
+          </div>
+        </a>
+
+        <!-- Bartłomiej Alexander -->
+        <a href="alexander-landing.html" class="card" data-status="shipped" data-search="bartlomiej alexander landing portfolio editorial produkty ai">
+          <div>
+            <div class="card-header">
+              <h2>Bartłomiej · portfolio</h2>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+            <p>Redakcyjny landing portfolio z asymetrycznym układem i typografią Cabinet Grotesk.</p>
+          </div>
+          <div class="card-footer">
+            <span class="tag">Editorial</span>
+            <span class="status status--shipped">Wysłane</span>
+          </div>
+        </a>
+
+        <!-- BarthMoney -->
+        <a href="barth-money.html" class="card" data-status="progress" data-search="barthmoney app mobile dashboard tokeny gold stany edge-case">
+          <div>
+            <div class="card-header">
+              <h2>BarthMoney · app</h2>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+            <p>Mobile dashboard, tokeny gold-on-dark oraz obsługa stanów edge-case.</p>
+          </div>
+          <div class="card-footer">
+            <span class="tag">Mobile UI</span>
+            <span class="status status--progress">W toku</span>
+          </div>
+        </a>
+
+        <!-- SaaS Finance Platform -->
+        <a href="saas-finance-platform.html" class="card" data-status="progress" data-search="saas finance platform b2b analityka mrr arr enterprise">
+          <div>
+            <div class="card-header">
+              <h2>SaaS Finance · platform</h2>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+            <p>Pulpit finansowy B2B do prognozowania przychodów i rozliczeń wielowalutowych.</p>
+          </div>
+          <div class="card-footer">
+            <span class="tag">B2B SaaS</span>
+            <span class="status status--progress">W toku</span>
+          </div>
+        </a>
+
+        <!-- Core Framework -->
+        <a href="core-framework-overview.html" class="card" data-status="shipped" data-search="core framework overview system wizualny typografia tokeny">
+          <div>
+            <div class="card-header">
+              <h2>Core Framework</h2>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+            <p>System wizualny, zasady layoutu, modularna skala typografii i baza tokenów.</p>
+          </div>
+          <div class="card-footer">
+            <span class="tag">Design System</span>
+            <span class="status status--shipped">Wysłane</span>
+          </div>
+        </a>
+
+        <!-- Studio Card -->
+        <a href="premium-studio-card-component.html" class="card" data-status="progress" data-search="studio card component interakcje mikroanimacje komponent">
+          <div>
+            <div class="card-header">
+              <h2>Studio Card · component</h2>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+            <p>Komponent prezentacyjny z mikrointerakcjami hoveru i krawędziowym oświetleniem.</p>
+          </div>
+          <div class="card-footer">
+            <span class="tag">Component</span>
+            <span class="status status--progress">W toku</span>
+          </div>
+        </a>
+
+        <!-- Aura Compute -->
+        <a href="aura-compute-matrix.html" class="card" data-status="archive" data-search="aura compute matrix infrastruktura chmura ai klastry">
+          <div>
+            <div class="card-header">
+              <h2>Aura Compute · matrix</h2>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+            <p>Koncepcja wizualizacji klastrów obliczeniowych AI i orkiestracji modeli.</p>
+          </div>
+          <div class="card-footer">
+            <span class="tag">Archiwum</span>
+            <span class="status status--archive">Archiwum</span>
+          </div>
+        </a>
+
+        <!-- Empty state message -->
+        <div class="empty" id="emptyMsg">
+          Brak projektów spełniających wybrane kryteria.
+        </div>
+
+      </div>
+    </main>
+
+    <script>
+      // Live search & status filtering
+      const searchInput = document.getElementById('searchInput');
+      const filterChips = document.querySelectorAll('.chip');
+      const cards = document.querySelectorAll('.card');
+      const emptyMsg = document.getElementById('emptyMsg');
+      const projectCount = document.getElementById('projectCount');
+
+      let activeFilter = 'all';
+
+      function updateProjects() {
+        const query = searchInput.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const status = card.getAttribute('data-status');
+          const searchData = card.getAttribute('data-search') + ' ' + card.querySelector('h2').textContent.toLowerCase();
+
+          const matchesStatus = (activeFilter === 'all') || (status === activeFilter);
+          const matchesQuery = !query || searchData.includes(query);
+
+          if (matchesStatus && matchesQuery) {
+            card.style.display = 'flex';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+        projectCount.textContent = `${visibleCount} ${visibleCount === 1 ? 'pozycja' : (visibleCount >= 2 && visibleCount <= 4 ? 'pozycje' : 'pozycji')}`;
+      }
+
+      searchInput.addEventListener('input', updateProjects);
+
+      filterChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          filterChips.forEach(c => c.classList.remove('chip--active'));
+          chip.classList.add('chip--active');
+          activeFilter = chip.getAttribute('data-filter');
+          updateProjects();
+        });
+      });
+
+      // Embed script
+      if (location.search.includes("embed")) {
+        document.documentElement.classList.add("is-embed");
+      }
+    </script>
+  </body>
+</html>

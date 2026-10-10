@@ -1,0 +1,4 @@
+- Import the global stylesheet directly in the root route as well as linking its URL in the document head so Vite processes and includes Tailwind styles in every preview and production bundle.
+- Play showreels in the shared accessible dialog using native video controls and media pointers to files in public/media; mount the video only while open so closing always stops playback.
+- Keep portfolio styling centralized in semantic CSS tokens and shared editorial utilities; this lets palette, typography and spacing changes remain consistent across sections and UI primitives.
+- Preserve portfolio content and media when applying a visual-reference document; reference project identities and unavailable HTML previews are not replacement content.
