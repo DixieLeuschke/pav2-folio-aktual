@@ -5,7 +5,13 @@ import tailwindcss from "@tailwindcss/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { nitro } from "nitro/vite";
 
+const normalizeBase = (value?: string) => {
+  if (!value || value === "/") return "/";
+  return `/${value.replace(/^\/+|\/+$/g, "")}/`;
+};
+
 export default defineConfig(({ command }) => ({
+  base: normalizeBase(process.env["VITE_BASE_PATH"]),
   plugins: [
     tailwindcss(),
     tsconfigPaths({ projects: ["./tsconfig.json"] }),

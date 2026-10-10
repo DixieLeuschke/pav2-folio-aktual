@@ -22,6 +22,11 @@ npm run preview
 
 Build tworzy `.output` z serwerem Node i zasobami publicznymi. Podgląd działa domyślnie pod `http://127.0.0.1:4173`; `PORT` lub `PORTFOLIO_PORT` zmienia port, `HOST` zmienia interfejs. Serwer produkcyjny można uruchomić przez `node .output/server/index.mjs`.
 
+## Deploy na GitHub Pages
+
+Workflow `.github/workflows/deploy-pages.yml` buduje statyczny artefakt i publikuje go na GitHub Pages przy pushu.
+Docelowy adres: `https://dixieleuschke.github.io/pav2-folio-aktual/`.
+
 ## Kontrola
 
 ```sh
