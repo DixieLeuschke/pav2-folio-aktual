@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
 import { navLinks, contactHref } from "@/data/portfolio";
+import { withBasePath } from "@/lib/base-path";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -30,7 +31,11 @@ export function Header() {
   return (
     <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
       <div className="container-ed flex h-18 items-center justify-between gap-6">
-        <a href="/#top" aria-label="John Pavulon — strona główna" className="wordmark">
+        <a
+          href={withBasePath("/#top")}
+          aria-label="John Pavulon — strona główna"
+          className="wordmark"
+        >
           John{" "}
           <span>
             Pavulon<span className="text-gold">.</span>

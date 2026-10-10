@@ -1,3 +1,5 @@
+import { withBasePath } from "@/lib/base-path";
+
 export type Project = {
   slug: string;
   name: string;
@@ -22,8 +24,8 @@ function project(
     name,
     category,
     description,
-    htmlPath: `/work/${filename}.html`,
-    thumbnail: `/work/covers/${filename}.png`,
+    htmlPath: withBasePath(`/work/${filename}.html`),
+    thumbnail: withBasePath(`/work/covers/${filename}.png`),
     featured,
     ...(variant ? { variant } : {}),
   };
@@ -198,10 +200,10 @@ export const process = [
   },
 ];
 export const navLinks = [
-  { label: "Prace", href: "/#work" },
-  { label: "O mnie", href: "/#about" },
-  { label: "Oferta", href: "/#expertise" },
-  { label: "Kontakt", href: "/#contact" },
+  { label: "Prace", href: withBasePath("/#work") },
+  { label: "O mnie", href: withBasePath("/#about") },
+  { label: "Oferta", href: withBasePath("/#expertise") },
+  { label: "Kontakt", href: withBasePath("/#contact") },
 ];
 export const contactEmail = "pavulonjohn@gmail.com";
 export const contactHref = `mailto:${contactEmail}?subject=${encodeURIComponent("Zapytanie o projekt")}`;

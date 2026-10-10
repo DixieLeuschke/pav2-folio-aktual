@@ -12,6 +12,7 @@ import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import "../styles.css";
+import { withBasePath } from "@/lib/base-path";
 
 function NotFoundComponent() {
   return (
@@ -79,11 +80,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: "Autorskie interfejsy, strony i eksperymenty cyfrowe John Pavulon.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "/og-john-pavulon.png" },
+      { property: "og:image", content: withBasePath("/og-john-pavulon.png") },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { property: "og:image:alt", content: "John Pavulon — cyfrowe doświadczenia z charakterem" },
-      { name: "twitter:image", content: "/og-john-pavulon.png" },
+      { name: "twitter:image", content: withBasePath("/og-john-pavulon.png") },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -97,7 +98,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "icon", href: withBasePath("/favicon.svg"), type: "image/svg+xml" },
     ],
   }),
   shellComponent: RootShell,

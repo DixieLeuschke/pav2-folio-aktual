@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import portrait from "@/assets/about-portrait.jpg";
 import { contactEmail, contactHref, expertise, process, featuredProjects } from "@/data/portfolio";
+import { withBasePath } from "@/lib/base-path";
 import { Reveal, SectionLabel } from "./Reveal";
 import { ProjectCard } from "./ProjectCard";
 import { Button } from "@/components/ui/button";
@@ -135,7 +136,7 @@ export function Process() {
 export function Footer() {
   return (
     <footer className="container-ed flex flex-col gap-6 border-t border-border py-10 md:flex-row md:items-center md:justify-between">
-      <a href="/#top" className="wordmark gold-link">
+      <a href={withBasePath("/#top")} className="wordmark gold-link">
         John Pavulon<span className="text-gold">.</span>
       </a>
       <Link to="/projekty" className="gold-link text-sm text-muted-foreground">
